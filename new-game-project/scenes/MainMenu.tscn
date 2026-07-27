@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://cea1sc4qofuos"]
+
+[ext_resource type="Script" uid="uid://ce2qxq67bsreh" path="res://scripts/main_menu.gd" id="1_0ykhv"]
+[ext_resource type="FontFile" uid="uid://cc3qys61w5p4m" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_yqorp"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ukcvp"]
+load_path = "res://.godot/imported/cartoon-style-wood-texture_1110-882.png-fb8779e1c62b2b060279f38d8b214f0b.ctex"
+
+[sub_resource type="Theme" id="Theme_8vrlf"]
+
+[node name="MainMenu" type="Control" unique_id=506523660]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ykhv")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1613764264]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 1151.0
+offset_bottom = 658.0
+texture = SubResource("CompressedTexture2D_ukcvp")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="." unique_id=425191823]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 80.0
+offset_right = 760.0
+offset_bottom = 137.0
+theme = SubResource("Theme_8vrlf")
+theme_override_fonts/font = ExtResource("1_yqorp")
+theme_override_font_sizes/font_size = 64
+text = "learn.code"
+horizontal_alignment = 1
+
+[node name="Sub" type="Label" parent="." unique_id=2117806535]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 152.0
+offset_right = 749.0
+offset_bottom = 186.0
+theme_override_fonts/font = ExtResource("1_yqorp")
+theme_override_font_sizes/font_size = 24
+text = "Make Learning Java Fun><"
+horizontal_alignment = 1
+
+[node name="Menu" type="VBoxContainer" parent="." unique_id=1754834234]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 416.0
+offset_top = 235.0
+offset_right = 750.0
+offset_bottom = 442.0
+alignment = 1
+
+[node name="StartButton" type="MenuButton" parent="Menu" unique_id=869972495]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_yqorp")
+theme_override_font_sizes/font_size = 24
+text = "Start Learning"
+icon_alignment = 1
+
+[node name="LessonsButton" type="MenuButton" parent="Menu" unique_id=593505126]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_yqorp")
+theme_override_font_sizes/font_size = 24
+text = "Lessons"
+
+[node name="Progress" type="MenuButton" parent="Menu" unique_id=1836340464]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_yqorp")
+theme_override_font_sizes/font_size = 24
+text = "Progress"
+
+[node name="ChallengeButton" type="MenuButton" parent="Menu" unique_id=603774851]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_yqorp")
+theme_override_font_sizes/font_size = 24
+text = "Code Challenges"
+
+[node name="Settings" type="MenuButton" parent="Menu" unique_id=57266520]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_yqorp")
+theme_override_font_sizes/font_size = 24
+text = "Settings"
+
+[node name="ExitButton" type="MenuButton" parent="Menu" unique_id=1499187519]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_yqorp")
+theme_override_font_sizes/font_size = 24
+text = "Exit Game"
+
+[node name="TipPanel" type="Panel" parent="." unique_id=1409145763]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 529.0
+offset_right = 1151.0
+offset_bottom = 655.0
+
+[node name="TipLabel" type="Label" parent="TipPanel" unique_id=2071506049]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 125.0
+theme_override_fonts/font = ExtResource("1_yqorp")
+theme_override_font_sizes/font_size = 24
+text = "Tip Of The Day:
+
+Java is case-sensitive."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1973389844]

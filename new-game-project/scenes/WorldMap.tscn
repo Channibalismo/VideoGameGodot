@@ -1,0 +1,192 @@
+[gd_scene format=3 uid="uid://tgs1xmr5jeeq"]
+
+[ext_resource type="Script" uid="uid://cuufs75wxxucq" path="res://scripts/lesson_node.gd" id="1_ej7nn"]
+[ext_resource type="Script" uid="uid://u6igdaytq4eg" path="res://scripts/world_map.gd" id="1_fgl0d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fgl0d"]
+radius = 26.0
+
+[node name="WorldMap" type="Control" unique_id=637270206]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 6.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fgl0d")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=866614149]
+
+[node name="Paths" type="Line2D" parent="." unique_id=1213304771]
+points = PackedVector2Array(950, 580, 750, 520, 550, 460, 300, 400, 500, 340, 700, 280, 500, 220, 700, 160, 900, 100)
+width = 6.0
+default_color = Color(0.545, 0.353, 0.169, 1)
+
+[node name="LessonNodes" type="Node2D" parent="." unique_id=361058987]
+
+[node name="Lesson1" type="Area2D" parent="LessonNodes" unique_id=837975186]
+position = Vector2(950, 580)
+script = ExtResource("1_ej7nn")
+
+[node name="Sprite2D" type="Sprite2D" parent="LessonNodes/Lesson1" unique_id=313180243]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LessonNodes/Lesson1" unique_id=914335661]
+shape = SubResource("CircleShape2D_fgl0d")
+
+[node name="Label" type="Label" parent="LessonNodes/Lesson1" unique_id=748003857]
+offset_left = -30.0
+offset_top = 30.0
+offset_right = 10.0
+offset_bottom = 53.0
+
+[node name="Lesson2" type="Area2D" parent="LessonNodes" unique_id=1967514856]
+position = Vector2(750, 520)
+script = ExtResource("1_ej7nn")
+lesson_number = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="LessonNodes/Lesson2" unique_id=1173066116]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LessonNodes/Lesson2" unique_id=1996539674]
+shape = SubResource("CircleShape2D_fgl0d")
+
+[node name="Label" type="Label" parent="LessonNodes/Lesson2" unique_id=870347351]
+offset_left = -30.0
+offset_top = 30.0
+offset_right = 10.0
+offset_bottom = 53.0
+
+[node name="Lesson3" type="Area2D" parent="LessonNodes" unique_id=235051241]
+position = Vector2(550, 460)
+script = ExtResource("1_ej7nn")
+lesson_number = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="LessonNodes/Lesson3" unique_id=1311300545]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LessonNodes/Lesson3" unique_id=1290663458]
+shape = SubResource("CircleShape2D_fgl0d")
+
+[node name="Label" type="Label" parent="LessonNodes/Lesson3" unique_id=534341572]
+offset_left = -30.0
+offset_top = 30.0
+offset_right = 10.0
+offset_bottom = 53.0
+
+[node name="Lesson4" type="Area2D" parent="LessonNodes" unique_id=1599996555]
+position = Vector2(300, 400)
+script = ExtResource("1_ej7nn")
+lesson_number = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="LessonNodes/Lesson4" unique_id=1128313323]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LessonNodes/Lesson4" unique_id=608334822]
+shape = SubResource("CircleShape2D_fgl0d")
+
+[node name="Label" type="Label" parent="LessonNodes/Lesson4" unique_id=582345498]
+offset_left = -30.0
+offset_top = 30.0
+offset_right = 10.0
+offset_bottom = 53.0
+
+[node name="Lesson5" type="Area2D" parent="LessonNodes" unique_id=1064545127]
+position = Vector2(500, 340)
+script = ExtResource("1_ej7nn")
+lesson_number = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="LessonNodes/Lesson5" unique_id=1460617446]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LessonNodes/Lesson5" unique_id=2024175491]
+shape = SubResource("CircleShape2D_fgl0d")
+
+[node name="Label" type="Label" parent="LessonNodes/Lesson5" unique_id=865796472]
+offset_left = -30.0
+offset_top = 30.0
+offset_right = 10.0
+offset_bottom = 53.0
+
+[node name="Lesson6" type="Area2D" parent="LessonNodes" unique_id=2048383459]
+position = Vector2(700, 280)
+script = ExtResource("1_ej7nn")
+lesson_number = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="LessonNodes/Lesson6" unique_id=1471155260]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LessonNodes/Lesson6" unique_id=1666091435]
+shape = SubResource("CircleShape2D_fgl0d")
+
+[node name="Label" type="Label" parent="LessonNodes/Lesson6" unique_id=1033135428]
+offset_left = -30.0
+offset_top = 30.0
+offset_right = 10.0
+offset_bottom = 53.0
+
+[node name="Lesson7" type="Area2D" parent="LessonNodes" unique_id=1895774555]
+position = Vector2(500, 220)
+script = ExtResource("1_ej7nn")
+lesson_number = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="LessonNodes/Lesson7" unique_id=1914894856]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LessonNodes/Lesson7" unique_id=1167852956]
+shape = SubResource("CircleShape2D_fgl0d")
+
+[node name="Label" type="Label" parent="LessonNodes/Lesson7" unique_id=501045119]
+offset_left = -30.0
+offset_top = 30.0
+offset_right = 10.0
+offset_bottom = 53.0
+
+[node name="Lesson8" type="Area2D" parent="LessonNodes" unique_id=575436471]
+position = Vector2(700, 160)
+script = ExtResource("1_ej7nn")
+lesson_number = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="LessonNodes/Lesson8" unique_id=1299333947]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LessonNodes/Lesson8" unique_id=675567650]
+shape = SubResource("CircleShape2D_fgl0d")
+
+[node name="Label" type="Label" parent="LessonNodes/Lesson8" unique_id=924001892]
+offset_left = -30.0
+offset_top = 30.0
+offset_right = 10.0
+offset_bottom = 53.0
+
+[node name="Lesson9" type="Area2D" parent="LessonNodes" unique_id=1095040895]
+position = Vector2(900, 100)
+script = ExtResource("1_ej7nn")
+lesson_number = 9
+
+[node name="Sprite2D" type="Sprite2D" parent="LessonNodes/Lesson9" unique_id=1929008353]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LessonNodes/Lesson9" unique_id=172601881]
+shape = SubResource("CircleShape2D_fgl0d")
+
+[node name="Label" type="Label" parent="LessonNodes/Lesson9" unique_id=1979102327]
+offset_left = -30.0
+offset_top = 30.0
+offset_right = 10.0
+offset_bottom = 53.0
+
+[node name="PlayerMaker" type="Sprite2D" parent="." unique_id=1879169059]
+
+[node name="BackButton" type="Button" parent="." unique_id=977719434]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="XPLabel" type="Label" parent="." unique_id=2133351450]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CoinsLabel" type="Label" parent="." unique_id=1426386676]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=712098566]
+position = Vector2(561, 498)

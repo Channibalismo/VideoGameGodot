@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://mro1d3kb7bxc"]
+
+[ext_resource type="Script" uid="uid://di8k54yq5kmh" path="res://scripts/LevelUpPanel.gd" id="1_ki22d"]
+[ext_resource type="Script" uid="uid://ch74mansnma0x" path="res://scripts/Learn.gd" id="1_o8jni"]
+
+[sub_resource type="Animation" id="Animation_ki22d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_o8jni"]
+resource_name = "level_up"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 1.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.003921569, 0.003921569, 0.003921569, 0), Color(0.003921569, 0.003921569, 0.003921569, 0.003921569), Color(0.003921569, 0.003921569, 0.003921569, 0.003921569), Color(0.0039215684, 0.0039215684, 0.0039215684, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3dl2o"]
+_data = {
+&"RESET": SubResource("Animation_ki22d"),
+&"level_up": SubResource("Animation_o8jni")
+}
+
+[node name="Learn" type="Node2D" unique_id=467079761]
+script = ExtResource("1_o8jni")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=478445081]
+
+[node name="LevelUpPanel" type="Control" parent="CanvasLayer" unique_id=2016796129]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ki22d")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/LevelUpPanel" unique_id=904924622]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 208.0
+offset_right = 807.0
+offset_bottom = 408.0
+
+[node name="Label" type="Label" parent="CanvasLayer/LevelUpPanel" unique_id=347035553]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="level_up" type="AnimationPlayer" parent="CanvasLayer/LevelUpPanel" unique_id=818009566]
+libraries/ = SubResource("AnimationLibrary_3dl2o")
