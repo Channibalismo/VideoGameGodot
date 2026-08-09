@@ -17,7 +17,7 @@ func _ready() -> void:
 	exit_button.pressed.connect(_on_exit_button_pressed)
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/WorldMap.tscn")
+	get_tree().change_scene_to_file("res://scenes/training/TrainingGround.tscn")
 
 func _on_lessons_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/LessonSelect.tscn")

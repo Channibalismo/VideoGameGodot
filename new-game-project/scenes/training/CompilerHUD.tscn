@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://oeimh0a6n4m3"]
+
+[ext_resource type="Script" uid="uid://dyne5i8bumbfl" path="res://scripts/training/compiler_hud.gd" id="1_ociis"]
+
+[node name="CompilerHUD" type="Control" unique_id=865197942]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_ociis")
+
+[node name="Dim" type="ColorRect" parent="." unique_id=1505865572]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.6)
+
+[node name="Panel" type="Panel" parent="." unique_id=1172167069]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -160.0
+offset_right = 280.0
+offset_bottom = 160.0
+
+[node name="TitleLabel" type="Label" parent="Panel" unique_id=1153695324]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 14.0
+offset_right = 540.0
+offset_bottom = 40.0
+text = "[ RACK MAGAZINE ]"
+
+[node name="InputLabel" type="Label" parent="Panel" unique_id=1983516537]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 46.0
+offset_right = 90.0
+offset_bottom = 72.0
+text = "Input:"
+
+[node name="TokenInput" type="LineEdit" parent="Panel" unique_id=499411559]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 44.0
+offset_right = 300.0
+offset_bottom = 76.0
+max_length = 3
+
+[node name="JavaLabel" type="Label" parent="Panel" unique_id=504665593]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 90.0
+offset_right = 540.0
+offset_bottom = 190.0
+autowrap_mode = 3
+
+[node name="EffectLabel" type="Label" parent="Panel" unique_id=1425834144]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 200.0
+offset_right = 540.0
+offset_bottom = 240.0
+autowrap_mode = 3
+
+[node name="StatusLabel" type="Label" parent="Panel" unique_id=236789756]
+modulate = Color(1, 0.85, 0.5, 1)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 260.0
+offset_right = 540.0
+offset_bottom = 300.0

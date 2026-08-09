@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cqtrj10wgjkfy"]
+
+[ext_resource type="Script" path="res://scripts/training/training_bullet.gd" id="1_gtt4p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmoyq"]
+size = Vector2(10, 10)
+
+[node name="TrainingBullet" type="Area2D" unique_id=1972556369]
+collision_layer = 4
+script = ExtResource("1_gtt4p")
+
+[node name="Square" type="ColorRect" parent="." unique_id=123355337]
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+color = Color(1, 0.9, 0.2, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1260923060]
+shape = SubResource("RectangleShape2D_hmoyq")

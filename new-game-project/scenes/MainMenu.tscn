@@ -35,7 +35,7 @@ offset_bottom = 137.0
 theme = SubResource("Theme_8vrlf")
 theme_override_fonts/font = ExtResource("1_yqorp")
 theme_override_font_sizes/font_size = 64
-text = "learn.code"
+text = "PROJ3KT : HOTF1X"
 horizontal_alignment = 1
 
 [node name="Sub" type="Label" parent="." unique_id=2117806535]
@@ -46,7 +46,7 @@ offset_right = 749.0
 offset_bottom = 186.0
 theme_override_fonts/font = ExtResource("1_yqorp")
 theme_override_font_sizes/font_size = 24
-text = "Make Learning Java Fun><"
+text = "You cannot defeat code with lead. Overwrite it."
 horizontal_alignment = 1
 
 [node name="Menu" type="VBoxContainer" parent="." unique_id=1754834234]
@@ -62,7 +62,7 @@ alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_yqorp")
 theme_override_font_sizes/font_size = 24
-text = "Start Learning"
+text = "Training Sim"
 icon_alignment = 1
 
 [node name="LessonsButton" type="MenuButton" parent="Menu" unique_id=593505126]

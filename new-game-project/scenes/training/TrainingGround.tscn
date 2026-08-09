@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://cgva5oivtgp5s"]
+
+[ext_resource type="Script" uid="uid://csx3tlmmpt8it" path="res://scripts/training/training_ground.gd" id="1_o3j11"]
+[ext_resource type="PackedScene" uid="uid://q4ppctehuh30" path="res://scenes/training/TrainingPlayer.tscn" id="2_2knfd"]
+[ext_resource type="PackedScene" uid="uid://cxronprfqt4wk" path="res://scenes/training/TrainingTarget.tscn" id="3_5p1af"]
+[ext_resource type="PackedScene" uid="uid://oeimh0a6n4m3" path="res://scenes/training/CompilerHUD.tscn" id="4_2knfd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbijj"]
+size = Vector2(1040, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mt1s"]
+size = Vector2(1040, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vj6cx"]
+size = Vector2(20, 640)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j0ft"]
+size = Vector2(20, 640)
+
+[node name="TrainingGround" type="Node2D" unique_id=165348608]
+script = ExtResource("1_o3j11")
+
+[node name="Floor" type="ColorRect" parent="." unique_id=1936517489]
+offset_right = 1000.0
+offset_bottom = 600.0
+color = Color(0.16, 0.16, 0.18, 1)
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=1376996863]
+collision_mask = 0
+
+[node name="Top" type="CollisionShape2D" parent="Walls" unique_id=1466578305]
+position = Vector2(500, -10)
+shape = SubResource("RectangleShape2D_bbijj")
+
+[node name="Bottom" type="CollisionShape2D" parent="Walls" unique_id=416939973]
+position = Vector2(500, 610)
+shape = SubResource("RectangleShape2D_8mt1s")
+
+[node name="Left" type="CollisionShape2D" parent="Walls" unique_id=1835260174]
+position = Vector2(-10, 300)
+shape = SubResource("RectangleShape2D_vj6cx")
+
+[node name="Right" type="CollisionShape2D" parent="Walls" unique_id=366692514]
+position = Vector2(1010, 300)
+shape = SubResource("RectangleShape2D_7j0ft")
+
+[node name="TrainingPlayer" parent="." unique_id=1125696549 instance=ExtResource("2_2knfd")]
+position = Vector2(180, 300)
+
+[node name="Target" parent="." unique_id=2137333302 instance=ExtResource("3_5p1af")]
+position = Vector2(820, 140)
+
+[node name="Target2" parent="." unique_id=1995267451 instance=ExtResource("3_5p1af")]
+position = Vector2(820, 460)
+required_token = "!"
+error_text = "isHostile = true  (needs !)"
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=2018219147]
+
+[node name="BackButton" type="Button" parent="UI" unique_id=1574173003]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 28.0
+offset_bottom = 28.0
+text = "< Back"
+
+[node name="HintLabel" type="Label" parent="UI" unique_id=216855326]
+offset_left = 260.0
+offset_top = 20.0
+offset_right = 261.0
+offset_bottom = 43.0
+text = "WASD move | Mouse aim | R rack a round | Click fire | Shift dash"
+
+[node name="LoadedLabel" type="Label" parent="UI" unique_id=872178541]
+modulate = Color(1, 0.9, 0.4, 1)
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 21.0
+offset_bottom = 83.0
+text = "LOADED: (none) — press R"
+
+[node name="CompilerHUD" parent="UI" unique_id=865197942 instance=ExtResource("4_2knfd")]
+grow_horizontal = 2
+grow_vertical = 2

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://q4ppctehuh30"]
+
+[ext_resource type="Script" path="res://scripts/training/training_player.gd" id="1_ngkkv"]
+[ext_resource type="PackedScene" uid="uid://cqtrj10wgjkfy" path="res://scenes/training/TrainingBullet.tscn" id="2_jk2c2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hwce"]
+size = Vector2(40, 40)
+
+[node name="TrainingPlayer" type="CharacterBody2D" unique_id=1125696549]
+collision_layer = 2
+script = ExtResource("1_ngkkv")
+bullet_scene = ExtResource("2_jk2c2")
+
+[node name="Square" type="ColorRect" parent="." unique_id=1502995873]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(0.2, 0.6, 1, 1)
+
+[node name="Facing" type="ColorRect" parent="." unique_id=697098367]
+offset_left = 16.0
+offset_top = -4.0
+offset_right = 24.0
+offset_bottom = 4.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=101960493]
+shape = SubResource("RectangleShape2D_5hwce")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=410216965]
+zoom = Vector2(1.2, 1.2)
