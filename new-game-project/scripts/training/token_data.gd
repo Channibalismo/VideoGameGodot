@@ -15,6 +15,26 @@ const TOKENS := {
 		"java": "boolean isHostile = true;\nisHostile = !isHostile; // -> false",
 		"effect": "Inverts the target's hostile flag."
 	},
+	"=0": {
+		"name": "Assignment Bullet",
+		"java": "int robotHealth = 10;\nrobotHealth = 0; // = overwrites the value",
+		"effect": "Overwrites target health to zero — instant shutdown."
+	},
+	"[]": {
+		"name": "Array Shotgun",
+		"java": "Bullet[] magazine = new Bullet[3];\n// [] declares a collection of values",
+		"effect": "Fires a multi-pellet spread for crowd control."
+	},
+	"//": {
+		"name": "Comment Shield",
+		"java": "// This whole line is ignored by the compiler.",
+		"effect": "Deploys a barrier — incoming shots are \"commented out\"."
+	},
+	"break;": {
+		"name": "Break Slug",
+		"java": "while (attacking) {\n\tbreak; // exits the loop immediately\n}",
+		"effect": "Heavy stun — cancels an enemy's attack loop."
+	},
 }
 
 

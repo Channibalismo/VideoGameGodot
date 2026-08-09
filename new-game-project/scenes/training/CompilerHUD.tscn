@@ -8,6 +8,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_ociis")
 
 [node name="Dim" type="ColorRect" parent="." unique_id=1505865572]
@@ -49,7 +51,7 @@ offset_left = 95.0
 offset_top = 44.0
 offset_right = 300.0
 offset_bottom = 76.0
-max_length = 3
+max_length = 8
 
 [node name="JavaLabel" type="Label" parent="Panel" unique_id=504665593]
 layout_mode = 0

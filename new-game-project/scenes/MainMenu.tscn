@@ -28,10 +28,10 @@ expand_mode = 1
 
 [node name="Title" type="Label" parent="." unique_id=425191823]
 layout_mode = 0
-offset_left = 385.0
-offset_top = 80.0
-offset_right = 760.0
-offset_bottom = 137.0
+offset_left = 284.0
+offset_top = 81.0
+offset_right = 885.0
+offset_bottom = 138.0
 theme = SubResource("Theme_8vrlf")
 theme_override_fonts/font = ExtResource("1_yqorp")
 theme_override_font_sizes/font_size = 64
@@ -40,10 +40,10 @@ horizontal_alignment = 1
 
 [node name="Sub" type="Label" parent="." unique_id=2117806535]
 layout_mode = 0
-offset_left = 415.0
-offset_top = 152.0
-offset_right = 749.0
-offset_bottom = 186.0
+offset_left = 253.0
+offset_top = 156.0
+offset_right = 912.0
+offset_bottom = 190.0
 theme_override_fonts/font = ExtResource("1_yqorp")
 theme_override_font_sizes/font_size = 24
 text = "You cannot defeat code with lead. Overwrite it."
@@ -62,7 +62,7 @@ alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_yqorp")
 theme_override_font_sizes/font_size = 24
-text = "Training Sim"
+text = "Start Playing"
 icon_alignment = 1
 
 [node name="LessonsButton" type="MenuButton" parent="Menu" unique_id=593505126]

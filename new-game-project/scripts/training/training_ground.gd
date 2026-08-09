@@ -2,8 +2,6 @@ extends Node2D
 ## Training ground: safe sandbox to practice racking Patch-Driver rounds
 ## before facing real corrupted units. Press R to open the Compiler Readout.
 
-@onready var target: Area2D = $Target
-@onready var target2: Area2D = $Target2
 @onready var back_button: Button = $UI/BackButton
 @onready var player: CharacterBody2D = $TrainingPlayer
 @onready var hud: Control = $UI/CompilerHUD
