@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://gsk8s4c4gw0s"]
 
-[ext_resource type="Script" path="res://scripts/combat/sector.gd" id="1_ahl62"]
+[ext_resource type="Script" uid="uid://dgm4mrvya516q" path="res://scripts/combat/sector.gd" id="1_ahl62"]
 [ext_resource type="PackedScene" uid="uid://q4ppctehuh30" path="res://scenes/training/TrainingPlayer.tscn" id="2_u17bf"]
 [ext_resource type="PackedScene" uid="uid://c4xtftpdwfxu2" path="res://scenes/combat/EnemyGlitch.tscn" id="3_g5yct"]
 [ext_resource type="PackedScene" uid="uid://oeimh0a6n4m3" path="res://scenes/training/CompilerHUD.tscn" id="4_xbbkt"]
