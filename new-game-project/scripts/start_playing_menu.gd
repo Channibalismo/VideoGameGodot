@@ -5,6 +5,7 @@ extends Control
 @onready var continue_button: Button = $Menu/ContinueButton
 @onready var continue_info: Label = $Menu/ContinueInfo
 @onready var training_button: Button = $Menu/TrainingButton
+@onready var sector_button: Button = $Menu/SectorButton
 @onready var back_button: Button = $Menu/BackButton
 @onready var new_game_confirm: ConfirmationDialog = $NewGameConfirm
 
@@ -13,6 +14,7 @@ func _ready() -> void:
 	new_game_button.pressed.connect(_on_new_game_pressed)
 	continue_button.pressed.connect(_on_continue_pressed)
 	training_button.pressed.connect(_on_training_pressed)
+	sector_button.pressed.connect(_on_sector_pressed)
 	back_button.pressed.connect(_on_back_pressed)
 	new_game_confirm.confirmed.connect(_on_new_game_confirmed)
 
@@ -67,6 +69,10 @@ func _on_continue_pressed() -> void:
 
 func _on_training_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/training/TrainingGround.tscn")
+
+
+func _on_sector_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/combat/Sector01.tscn")
 
 
 func _on_back_pressed() -> void:

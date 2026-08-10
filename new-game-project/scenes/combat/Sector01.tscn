@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://gsk8s4c4gw0s"]
+
+[ext_resource type="Script" path="res://scripts/combat/sector.gd" id="1_ahl62"]
+[ext_resource type="PackedScene" uid="uid://q4ppctehuh30" path="res://scenes/training/TrainingPlayer.tscn" id="2_u17bf"]
+[ext_resource type="PackedScene" uid="uid://c4xtftpdwfxu2" path="res://scenes/combat/EnemyGlitch.tscn" id="3_g5yct"]
+[ext_resource type="PackedScene" uid="uid://oeimh0a6n4m3" path="res://scenes/training/CompilerHUD.tscn" id="4_xbbkt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbkyo"]
+size = Vector2(1240, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnyd2"]
+size = Vector2(1240, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6r7ou"]
+size = Vector2(20, 840)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2fh7d"]
+size = Vector2(20, 840)
+
+[node name="Sector01" type="Node2D" unique_id=417118792]
+script = ExtResource("1_ahl62")
+
+[node name="Floor" type="ColorRect" parent="." unique_id=1616659144]
+offset_right = 1200.0
+offset_bottom = 800.0
+color = Color(0.1, 0.04, 0.16, 1)
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=632070906]
+collision_mask = 0
+
+[node name="Top" type="CollisionShape2D" parent="Walls" unique_id=1689644645]
+position = Vector2(600, -10)
+shape = SubResource("RectangleShape2D_fbkyo")
+
+[node name="Bottom" type="CollisionShape2D" parent="Walls" unique_id=1782010338]
+position = Vector2(600, 810)
+shape = SubResource("RectangleShape2D_xnyd2")
+
+[node name="Left" type="CollisionShape2D" parent="Walls" unique_id=2147044702]
+position = Vector2(-10, 400)
+shape = SubResource("RectangleShape2D_6r7ou")
+
+[node name="Right" type="CollisionShape2D" parent="Walls" unique_id=1452660941]
+position = Vector2(1210, 400)
+shape = SubResource("RectangleShape2D_2fh7d")
+
+[node name="TrainingPlayer" parent="." unique_id=1125696549 instance=ExtResource("2_u17bf")]
+position = Vector2(150, 400)
+
+[node name="Enemy1" parent="." unique_id=575380211 instance=ExtResource("3_g5yct")]
+position = Vector2(500, 200)
+
+[node name="Enemy2" parent="." unique_id=1509112152 instance=ExtResource("3_g5yct")]
+position = Vector2(700, 600)
+required_token = "!"
+error_text = "isHostile = true  (needs !)"
+
+[node name="Enemy3" parent="." unique_id=387985657 instance=ExtResource("3_g5yct")]
+position = Vector2(950, 250)
+required_token = "=0"
+error_text = "robotHealth = 10  (needs =0)"
+
+[node name="Enemy4" parent="." unique_id=2095850104 instance=ExtResource("3_g5yct")]
+position = Vector2(1000, 550)
+required_token = "break;"
+error_text = "while(attacking) { } // stuck looping"
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1932301041]
+
+[node name="BackButton" type="Button" parent="UI" unique_id=497344248]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 28.0
+offset_bottom = 28.0
+text = "< Back"
+
+[node name="HintLabel" type="Label" parent="UI" unique_id=1190178195]
+offset_left = 260.0
+offset_top = 20.0
+offset_right = 261.0
+offset_bottom = 43.0
+text = "WASD move | Mouse aim | R rack a round | Click fire | One hit and you're dead"
+
+[node name="LoadedLabel" type="Label" parent="UI" unique_id=1884933679]
+modulate = Color(1, 0.9, 0.4, 1)
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 21.0
+offset_bottom = 83.0
+text = "LOADED: (none) — press R"
+
+[node name="Banner" type="Label" parent="UI" unique_id=1550545568]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -40.0
+offset_right = 300.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 40
+text = "SECTOR CLEARED"
+horizontal_alignment = 1
+
+[node name="CompilerHUD" parent="UI" unique_id=865197942 instance=ExtResource("4_xbbkt")]

@@ -1,22 +1,36 @@
 extends CharacterBody2D
 ## Vanguard Specialist — square placeholder for the Patch-Driver operator.
+## Tuned Hotline Miami style: fast, twitchy, one hit and you're dead.
 
-@export var speed: float = 300.0
-@export var dash_speed: float = 900.0
-@export var dash_duration: float = 0.15
-@export var dash_cooldown: float = 0.6
-@export var fire_rate: float = 0.25
+signal player_died
+
+@export var speed: float = 380.0
+@export var dash_speed: float = 1000.0
+@export var dash_duration: float = 0.12
+@export var dash_cooldown: float = 0.35
+@export var fire_rate: float = 0.22
 @export var bullet_scene: PackedScene  # assign TrainingBullet.tscn in the Inspector
 
-var loaded_token: String = ""  # set by TrainingGround when the HUD loads a round
+var loaded_token: String = ""  # set by the room controller when the HUD loads a round
 var is_dashing := false
+var is_dead := false
 var dash_timer := 0.0
 var dash_cd_timer := 0.0
 var fire_timer := 0.0
 var dash_direction := Vector2.ZERO
+var shake_trauma := 0.0
+
+@onready var camera: Camera2D = $Camera2D
+
+
+func _ready() -> void:
+	add_to_group("player")
 
 
 func _physics_process(delta: float) -> void:
+	if is_dead:
+		return
+
 	var input_dir := Vector2(
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
 		Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
@@ -46,6 +60,29 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("shoot") and fire_timer <= 0.0 and loaded_token != "":
 		_shoot()
 		fire_timer = fire_rate
+
+
+func _process(delta: float) -> void:
+	if shake_trauma > 0.0:
+		shake_trauma = max(shake_trauma - delta * 2.5, 0.0)
+		var power := shake_trauma * shake_trauma
+		camera.offset = Vector2(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)) * 16.0 * power
+	elif camera.offset != Vector2.ZERO:
+		camera.offset = Vector2.ZERO
+
+
+func shake(amount: float) -> void:
+	shake_trauma = clamp(shake_trauma + amount, 0.0, 1.0)
+
+
+func die() -> void:
+	if is_dead:
+		return
+	is_dead = true
+	velocity = Vector2.ZERO
+	modulate = Color(1.0, 0.25, 0.25)
+	shake(0.6)
+	player_died.emit()
 
 
 func _shoot() -> void:
