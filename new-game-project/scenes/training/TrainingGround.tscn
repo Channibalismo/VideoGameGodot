@@ -69,7 +69,7 @@ offset_left = 260.0
 offset_top = 20.0
 offset_right = 261.0
 offset_bottom = 43.0
-text = "WASD move | Mouse aim | R rack a round | Click fire | Rounds: ; ! =0 [] // break;"
+text = "WASD move | Mouse aim | R rack a round | Click fire | Shift = Sandevistan | Rounds: ; ! =0 [] // break;"
 
 [node name="LoadedLabel" type="Label" parent="UI" unique_id=872178541]
 modulate = Color(1, 0.9, 0.4, 1)

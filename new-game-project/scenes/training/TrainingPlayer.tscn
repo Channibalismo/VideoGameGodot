@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://q4ppctehuh30"]
 
-[ext_resource type="Script" path="res://scripts/training/training_player.gd" id="1_ngkkv"]
+[ext_resource type="Script" uid="uid://chxch1c0qhhae" path="res://scripts/training/training_player.gd" id="1_ngkkv"]
 [ext_resource type="PackedScene" uid="uid://cqtrj10wgjkfy" path="res://scenes/training/TrainingBullet.tscn" id="2_jk2c2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5hwce"]
@@ -9,6 +9,9 @@ size = Vector2(40, 40)
 [node name="TrainingPlayer" type="CharacterBody2D" unique_id=1125696549]
 collision_layer = 2
 script = ExtResource("1_ngkkv")
+dash_speed = null
+dash_duration = null
+dash_cooldown = null
 bullet_scene = ExtResource("2_jk2c2")
 
 [node name="Square" type="ColorRect" parent="." unique_id=1502995873]
@@ -29,3 +32,12 @@ shape = SubResource("RectangleShape2D_5hwce")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=410216965]
 zoom = Vector2(1.2, 1.2)
+
+[node name="MuzzleFlash" type="ColorRect" parent="." unique_id=1154871955]
+visible = false
+offset_left = 22.0
+offset_top = -9.0
+offset_right = 42.0
+offset_bottom = 9.0
+mouse_filter = 2
+color = Color(1, 0.95, 0.4, 1)

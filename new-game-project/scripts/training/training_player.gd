@@ -1,30 +1,42 @@
 extends CharacterBody2D
 ## Vanguard Specialist — square placeholder for the Patch-Driver operator.
 ## Tuned Hotline Miami style: fast, twitchy, one hit and you're dead.
+## Mobility ability is a Cyberpunk-style Sandevistan: the world slows
+## down around you while you move at full speed.
 
 signal player_died
 
 @export var speed: float = 380.0
-@export var dash_speed: float = 1000.0
-@export var dash_duration: float = 0.12
-@export var dash_cooldown: float = 0.35
 @export var fire_rate: float = 0.22
 @export var bullet_scene: PackedScene  # assign TrainingBullet.tscn in the Inspector
 
+@export_group("Sandevistan")
+@export var sandevistan_duration: float = 2.0
+@export var sandevistan_time_scale: float = 0.3
+@export var sandevistan_cooldown: float = 5.0
+
+@export_group("Comment Shield")
+@export var shield_duration: float = 1.2
+
 var loaded_token: String = ""  # set by the room controller when the HUD loads a round
-var is_dashing := false
 var is_dead := false
-var dash_timer := 0.0
-var dash_cd_timer := 0.0
 var fire_timer := 0.0
-var dash_direction := Vector2.ZERO
 var shake_trauma := 0.0
 
+var sandevistan_active := false
+var sandevistan_cd_timer := 0.0
+
+var shield_active := false
+var shield_timer := 0.0
+
 @onready var camera: Camera2D = $Camera2D
+@onready var muzzle_flash: ColorRect = $MuzzleFlash
 
 
 func _ready() -> void:
 	add_to_group("player")
+	if muzzle_flash:
+		muzzle_flash.visible = false
 
 
 func _physics_process(delta: float) -> void:
@@ -36,23 +48,20 @@ func _physics_process(delta: float) -> void:
 		Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	).normalized()
 
-	dash_cd_timer = max(dash_cd_timer - delta, 0.0)
 	fire_timer = max(fire_timer - delta, 0.0)
+	sandevistan_cd_timer = max(sandevistan_cd_timer - delta, 0.0)
 
-	if Input.is_action_just_pressed("dash") and dash_cd_timer <= 0.0 and input_dir != Vector2.ZERO:
-		is_dashing = true
-		dash_timer = dash_duration
-		dash_cd_timer = dash_cooldown
-		dash_direction = input_dir
+	if shield_active:
+		shield_timer -= delta
+		if shield_timer <= 0.0:
+			_end_shield()
 
-	if is_dashing:
-		velocity = dash_direction * dash_speed
-		dash_timer -= delta
-		if dash_timer <= 0.0:
-			is_dashing = false
-	else:
-		velocity = input_dir * speed
+	if Input.is_action_just_pressed("sandevistan") and sandevistan_cd_timer <= 0.0 and not sandevistan_active:
+		_activate_sandevistan()
 
+	# The player always moves at full speed — Sandevistan doesn't touch
+	# this, only CombatTime.scale (read by enemies) changes.
+	velocity = input_dir * speed
 	move_and_slide()
 
 	look_at(get_global_mouse_position())
@@ -76,7 +85,7 @@ func shake(amount: float) -> void:
 
 
 func die() -> void:
-	if is_dead:
+	if is_dead or shield_active:
 		return
 	is_dead = true
 	velocity = Vector2.ZERO
@@ -85,12 +94,68 @@ func die() -> void:
 	player_died.emit()
 
 
+func _activate_sandevistan() -> void:
+	sandevistan_active = true
+	sandevistan_cd_timer = sandevistan_cooldown
+	CombatTime.scale = sandevistan_time_scale
+	modulate = Color(0.6, 0.95, 1.0)
+	shake(0.15)
+	# ignore_time_scale=true so the ability's own duration is real-world
+	# seconds, not stretched out by the slow-mo it's causing.
+	await get_tree().create_timer(sandevistan_duration, true, false, true).timeout
+	sandevistan_active = false
+	CombatTime.scale = 1.0
+	if not shield_active:
+		modulate = Color(1.0, 1.0, 1.0)
+
+
+func _activate_shield() -> void:
+	shield_active = true
+	shield_timer = shield_duration
+	modulate = Color(0.5, 0.9, 1.0)
+
+
+func _end_shield() -> void:
+	shield_active = false
+	if not sandevistan_active:
+		modulate = Color(1.0, 1.0, 1.0)
+
+
 func _shoot() -> void:
+	# Comment Shield doesn't fire a round — it's a defensive burst.
+	if loaded_token == "//":
+		_activate_shield()
+		return
+
 	if bullet_scene == null:
 		push_warning("TrainingPlayer: no bullet_scene assigned in the Inspector.")
 		return
+
+	shake(0.08)
+	_flash_muzzle()
+
+	var aim_dir := (get_global_mouse_position() - global_position).normalized()
+
+	if loaded_token == "[]":
+		# Array Shotgun — three-pellet spread.
+		for angle_deg in [-12.0, 0.0, 12.0]:
+			_fire_bullet(aim_dir.rotated(deg_to_rad(angle_deg)))
+	else:
+		_fire_bullet(aim_dir)
+
+
+func _fire_bullet(direction: Vector2) -> void:
 	var bullet := bullet_scene.instantiate()
 	get_tree().current_scene.add_child(bullet)
 	bullet.global_position = global_position
-	bullet.direction = (get_global_mouse_position() - global_position).normalized()
+	bullet.direction = direction
 	bullet.token = loaded_token
+
+
+func _flash_muzzle() -> void:
+	if muzzle_flash == null:
+		return
+	muzzle_flash.visible = true
+	await get_tree().create_timer(0.05).timeout
+	if is_instance_valid(self):
+		muzzle_flash.visible = false
