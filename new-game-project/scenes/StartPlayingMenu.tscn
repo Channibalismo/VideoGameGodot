@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bg5fl0hs4hoah" path="res://scripts/start_playing_menu.gd" id="1_n38a7"]
 [ext_resource type="FontFile" uid="uid://cc3qys61w5p4m" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="2_l0nyk"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ukcvp"]
-load_path = "res://.godot/imported/cartoon-style-wood-texture_1110-882.png-fb8779e1c62b2b060279f38d8b214f0b.ctex"
+[ext_resource type="Texture2D" uid="uid://cllbpy4bc2qe8" path="res://assets/backgrounds/cartoon-style-wood-texture_1110-882.png" id="2_qoq3e"]
 
 [node name="StartPlayingMenu" type="Control" unique_id=1243073910]
 layout_mode = 3
@@ -19,7 +17,7 @@ script = ExtResource("1_n38a7")
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = SubResource("CompressedTexture2D_ukcvp")
+texture = ExtResource("2_qoq3e")
 expand_mode = 1
 
 [node name="Title" type="Label" parent="." unique_id=324102268]
