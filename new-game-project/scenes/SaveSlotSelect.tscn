@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://dd28rm6hl6fbc"]
+
+[ext_resource type="Script" uid="uid://bfav8wyg72q5x" path="res://scripts/save_slot_select.gd" id="1_e5guq"]
+[ext_resource type="FontFile" uid="uid://cc3qys61w5p4m" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="2_8ppk4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ukcvp"]
+load_path = "res://.godot/imported/cartoon-style-wood-texture_1110-882.png-fb8779e1c62b2b060279f38d8b214f0b.ctex"
+
+[node name="SaveSlotSelect" type="Control" unique_id=1492782854]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_e5guq")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1386123812]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource("CompressedTexture2D_ukcvp")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="." unique_id=80472723]
+layout_mode = 0
+offset_top = 60.0
+offset_right = 1152.0
+offset_bottom = 110.0
+theme_override_fonts/font = ExtResource("2_8ppk4")
+theme_override_font_sizes/font_size = 64
+text = "SELECT SAVE"
+horizontal_alignment = 1
+
+[node name="Slots" type="VBoxContainer" parent="." unique_id=752206323]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -69.0
+offset_right = 262.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="Slot1" type="HBoxContainer" parent="Slots" unique_id=862293810]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="Slots/Slot1" unique_id=1196768875]
+custom_minimum_size = Vector2(420, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8ppk4")
+theme_override_font_sizes/font_size = 24
+text = "SLOT 1 — Empty (New Game)"
+
+[node name="ResetButton" type="Button" parent="Slots/Slot1" unique_id=1683318520]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8ppk4")
+theme_override_font_sizes/font_size = 24
+text = "Reset"
+
+[node name="Slot2" type="HBoxContainer" parent="Slots" unique_id=1067436376]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="Slots/Slot2" unique_id=1920320728]
+custom_minimum_size = Vector2(420, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8ppk4")
+theme_override_font_sizes/font_size = 24
+text = "SLOT 2 — Empty (New Game)"
+
+[node name="ResetButton" type="Button" parent="Slots/Slot2" unique_id=2123138790]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8ppk4")
+theme_override_font_sizes/font_size = 24
+text = "Reset"
+
+[node name="Slot3" type="HBoxContainer" parent="Slots" unique_id=503961996]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="Slots/Slot3" unique_id=1877250380]
+custom_minimum_size = Vector2(420, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8ppk4")
+theme_override_font_sizes/font_size = 24
+text = "SLOT 3 — Empty (New Game)"
+
+[node name="ResetButton" type="Button" parent="Slots/Slot3" unique_id=1560256339]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8ppk4")
+theme_override_font_sizes/font_size = 24
+text = "Reset"
+
+[node name="BackButton" type="Button" parent="." unique_id=1513430582]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 28.0
+offset_bottom = 28.0
+text = "< Back"
+
+[node name="ResetConfirm" type="ConfirmationDialog" parent="." unique_id=989255627]
+title = "Erase Slot?"
+ok_button_text = "Erase & Start New"
