@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ce2qxq67bsreh" path="res://scripts/main_menu.gd" id="1_0ykhv"]
 [ext_resource type="FontFile" uid="uid://cc3qys61w5p4m" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_yqorp"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ukcvp"]
+[ext_resource type="Texture2D" uid="uid://cllbpy4bc2qe8" path="res://assets/backgrounds/cartoon-style-wood-texture_1110-882.png" id="2_2wh52"]
 
 [sub_resource type="Theme" id="Theme_8vrlf"]
 
@@ -22,7 +21,7 @@ offset_left = 3.0
 offset_top = 4.0
 offset_right = 1151.0
 offset_bottom = 658.0
-texture = SubResource("CompressedTexture2D_ukcvp")
+texture = ExtResource("2_2wh52")
 expand_mode = 1
 
 [node name="Title" type="Label" parent="." unique_id=425191823]
