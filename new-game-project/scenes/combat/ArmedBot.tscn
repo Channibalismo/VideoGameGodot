@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://c7noxsbsafn4a"]
+
+[ext_resource type="Script" uid="uid://bbxeb4h1meioo" path="res://scripts/combat/bots/armed_bot.gd" id="1_5kvxj"]
+[ext_resource type="Script" uid="uid://d3ecqh8evyr2x" path="res://scripts/combat/enemy_hurtbox.gd" id="2_e204e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkmbn"]
+size = Vector2(36, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p436k"]
+size = Vector2(40, 40)
+
+[node name="ArmedBot" type="CharacterBody2D" unique_id=525491295]
+collision_layer = 8
+script = ExtResource("1_5kvxj")
+
+[node name="Square" type="ColorRect" parent="." unique_id=1993140873]
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+color = Color(0.35, 0.45, 0.85, 1)
+
+[node name="ErrorLabel" type="Label" parent="." unique_id=1835489309]
+offset_left = -70.0
+offset_top = -55.0
+offset_right = 70.0
+offset_bottom = -25.0
+text = "ArmedBot: robotHealth > 0  (needs =0)"
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1014524630]
+shape = SubResource("RectangleShape2D_rkmbn")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=524344966]
+collision_mask = 2
+script = ExtResource("2_e204e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1270007054]
+shape = SubResource("RectangleShape2D_p436k")

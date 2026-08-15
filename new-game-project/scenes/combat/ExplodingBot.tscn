@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://tqktt6hw18ga"]
+
+[ext_resource type="Script" uid="uid://rr0qqohm33mf" path="res://scripts/combat/bots/demolition_bot.gd" id="1_lhvgl"]
+[ext_resource type="Script" uid="uid://d3ecqh8evyr2x" path="res://scripts/combat/enemy_hurtbox.gd" id="2_5jw4e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hq2kf"]
+size = Vector2(36, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ioywx"]
+size = Vector2(40, 40)
+
+[node name="ExplodingBot" type="CharacterBody2D" unique_id=1107346000]
+collision_layer = 8
+script = ExtResource("1_lhvgl")
+
+[node name="Square" type="ColorRect" parent="." unique_id=2082841223]
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+color = Color(1, 0.55, 0.1, 1)
+
+[node name="ErrorLabel" type="Label" parent="." unique_id=2083773233]
+offset_left = -70.0
+offset_top = -55.0
+offset_right = 70.0
+offset_bottom = -25.0
+text = "isExploding = true  (needs !)"
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1613789834]
+shape = SubResource("RectangleShape2D_hq2kf")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1113614474]
+collision_mask = 2
+script = ExtResource("2_5jw4e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1030804656]
+shape = SubResource("RectangleShape2D_ioywx")

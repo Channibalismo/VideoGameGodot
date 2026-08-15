@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bvf4owdy383hp"]
+
+[ext_resource type="Script" uid="uid://q775c3k1ognc" path="res://scripts/combat/bots/house_bot.gd" id="1_36h2l"]
+[ext_resource type="Script" uid="uid://d3ecqh8evyr2x" path="res://scripts/combat/enemy_hurtbox.gd" id="2_6kfp6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8xx0"]
+size = Vector2(36, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj2c5"]
+size = Vector2(40, 40)
+
+[node name="HouseBot" type="CharacterBody2D" unique_id=2117221467]
+collision_layer = 8
+script = ExtResource("1_36h2l")
+
+[node name="Square" type="ColorRect" parent="." unique_id=1431613828]
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+color = Color(0.85, 0.25, 0.2, 1)
+
+[node name="ErrorLabel" type="Label" parent="." unique_id=1718126708]
+offset_left = -70.0
+offset_top = -55.0
+offset_right = 70.0
+offset_bottom = -25.0
+text = "ERROR: missing ;"
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1456049912]
+shape = SubResource("RectangleShape2D_x8xx0")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1790898764]
+collision_mask = 2
+script = ExtResource("2_6kfp6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=953002437]
+shape = SubResource("RectangleShape2D_pj2c5")

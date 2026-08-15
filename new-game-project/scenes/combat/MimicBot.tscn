@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://cgva5oivtgp5s"]
+[gd_scene format=3 uid="uid://n2ojhbfmvf1i"]
 
-[ext_resource type="Script" uid="uid://d1no53we4snfq" path="res://scripts/combat/bots/mimic_bot.gd" id="1_fmcm3"]
-[ext_resource type="Script" uid="uid://d3ecqh8evyr2x" path="res://scripts/combat/enemy_hurtbox.gd" id="2_o3j11"]
+[ext_resource type="Script" uid="uid://d1no53we4snfq" path="res://scripts/combat/bots/mimic_bot.gd" id="1_einir"]
+[ext_resource type="Script" uid="uid://d3ecqh8evyr2x" path="res://scripts/combat/enemy_hurtbox.gd" id="2_4do0s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7wpjl"]
 size = Vector2(36, 36)
@@ -11,7 +11,7 @@ size = Vector2(40, 40)
 
 [node name="MimicBot" type="CharacterBody2D" unique_id=1700906947]
 collision_layer = 8
-script = ExtResource("1_fmcm3")
+script = ExtResource("1_einir")
 
 [node name="Square" type="ColorRect" parent="." unique_id=1454456442]
 offset_left = -18.0
@@ -33,7 +33,7 @@ shape = SubResource("RectangleShape2D_7wpjl")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=785383884]
 collision_mask = 2
-script = ExtResource("2_o3j11")
+script = ExtResource("2_4do0s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=703136599]
 shape = SubResource("RectangleShape2D_ufixy")
