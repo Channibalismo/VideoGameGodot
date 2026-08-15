@@ -2,8 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bg5fl0hs4hoah" path="res://scripts/start_playing_menu.gd" id="1_n38a7"]
 [ext_resource type="FontFile" uid="uid://cc3qys61w5p4m" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="2_l0nyk"]
+<<<<<<< HEAD
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ukcvp"]
+=======
+[ext_resource type="Texture2D" uid="uid://cllbpy4bc2qe8" path="res://assets/backgrounds/cartoon-style-wood-texture_1110-882.png" id="2_qoq3e"]
+>>>>>>> c406e3c43cde83c0d7b7267a70e0396d0a16735a
 
 [node name="StartPlayingMenu" type="Control" unique_id=1243073910]
 layout_mode = 3
@@ -20,7 +24,7 @@ script = ExtResource("1_n38a7")
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = SubResource("CompressedTexture2D_ukcvp")
+texture = ExtResource("2_qoq3e")
 expand_mode = 1
 
 [node name="Title" type="Label" parent="." unique_id=324102268]
@@ -55,22 +59,11 @@ offset_top = -62.0
 offset_right = 175.456
 offset_bottom = 192.0
 
-[node name="NewGameButton" type="Button" parent="Menu" unique_id=486532111]
+[node name="SelectSaveButton" type="Button" parent="Menu" unique_id=486532111]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_l0nyk")
 theme_override_font_sizes/font_size = 24
-text = "New Game"
-
-[node name="ContinueButton" type="Button" parent="Menu" unique_id=175054933]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_l0nyk")
-theme_override_font_sizes/font_size = 24
-text = "Continue"
-
-[node name="ContinueInfo" type="Label" parent="Menu" unique_id=1012429992]
-modulate = Color(0.7, 0.85, 0.5, 0.85)
-layout_mode = 2
-horizontal_alignment = 1
+text = "Select Save"
 
 [node name="TrainingButton" type="Button" parent="Menu" unique_id=2001533759]
 layout_mode = 2
@@ -80,6 +73,8 @@ text = "Training Sim"
 
 [node name="SectorButton" type="Button" parent="Menu" unique_id=1927157235]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_l0nyk")
+theme_override_font_sizes/font_size = 24
 text = "Sector 01 (Combat Test)"
 
 [node name="BackButton" type="Button" parent="Menu" unique_id=1058530114]
@@ -87,8 +82,3 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_l0nyk")
 theme_override_font_sizes/font_size = 24
 text = "< Back"
-
-[node name="NewGameConfirm" type="ConfirmationDialog" parent="." unique_id=1697903322]
-title = "Overwrite Save?"
-ok_button_text = "Erase & Start New"
-dialog_text = "Starting a new game will erase your current lesson progress, XP, and coins. This can't be undone."
