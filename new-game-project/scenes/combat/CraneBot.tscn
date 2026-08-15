@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://ib2vxl4ii6qa"]
+
+[ext_resource type="Script" uid="uid://dtidx6hec4r61" path="res://scripts/combat/bots/crane_bot.gd" id="1_1o6no"]
+[ext_resource type="Script" uid="uid://d3ecqh8evyr2x" path="res://scripts/combat/enemy_hurtbox.gd" id="2_ctt3v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35187"]
+size = Vector2(56, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_woap8"]
+size = Vector2(60, 60)
+
+[node name="CraneBot" type="CharacterBody2D" unique_id=1016564598]
+collision_layer = 8
+script = ExtResource("1_1o6no")
+
+[node name="Square" type="ColorRect" parent="." unique_id=2091351067]
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+color = Color(0.55, 0.55, 0.6, 1)
+
+[node name="ErrorLabel" type="Label" parent="." unique_id=333865071]
+offset_left = -70.0
+offset_top = -55.0
+offset_right = 70.0
+offset_bottom = -25.0
+text = "crane.power = true  // use terminal"
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=399671946]
+shape = SubResource("RectangleShape2D_35187")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1760750103]
+collision_mask = 2
+script = ExtResource("2_ctt3v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=206798173]
+shape = SubResource("RectangleShape2D_woap8")

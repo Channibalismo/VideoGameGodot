@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dnc0lbbft2e4q"]
+
+[ext_resource type="Script" uid="uid://tchoi04rfhtt" path="res://scripts/combat/bots/med_bot.gd" id="1_hmrpx"]
+[ext_resource type="Script" uid="uid://d3ecqh8evyr2x" path="res://scripts/combat/enemy_hurtbox.gd" id="2_xto1t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohrmp"]
+size = Vector2(36, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rfxb"]
+size = Vector2(40, 40)
+
+[node name="MedBot" type="CharacterBody2D" unique_id=333379857]
+collision_layer = 8
+script = ExtResource("1_hmrpx")
+
+[node name="Square" type="ColorRect" parent="." unique_id=913576774]
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+color = Color(0.4, 0.9, 0.55, 1)
+
+[node name="ErrorLabel" type="Label" parent="." unique_id=522160795]
+offset_left = -70.0
+offset_top = -55.0
+offset_right = 70.0
+offset_bottom = -25.0
+text = "(RogueBot) target  // cast to (Player)"
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=670537296]
+shape = SubResource("RectangleShape2D_ohrmp")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1305077980]
+collision_mask = 2
+script = ExtResource("2_xto1t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1181895830]
+shape = SubResource("RectangleShape2D_8rfxb")

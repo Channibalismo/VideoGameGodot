@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://foohukvuimj8"]
+
+[ext_resource type="Script" uid="uid://c8rhobcgb0r2v" path="res://scripts/combat/bots/courier_bot.gd" id="1_c1wq4"]
+[ext_resource type="Script" uid="uid://d3ecqh8evyr2x" path="res://scripts/combat/enemy_hurtbox.gd" id="2_ff2ha"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpano"]
+size = Vector2(36, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3axp0"]
+size = Vector2(40, 40)
+
+[node name="CourierBot" type="CharacterBody2D" unique_id=282960319]
+collision_layer = 8
+script = ExtResource("1_c1wq4")
+
+[node name="Square" type="ColorRect" parent="." unique_id=231550580]
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+color = Color(0.95, 0.85, 0.2, 1)
+
+[node name="ErrorLabel" type="Label" parent="." unique_id=929202863]
+offset_left = -70.0
+offset_top = -55.0
+offset_right = 70.0
+offset_bottom = -25.0
+text = "alarmTimer = idle"
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=895469949]
+shape = SubResource("RectangleShape2D_mpano")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1846671505]
+collision_mask = 2
+script = ExtResource("2_ff2ha")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=548487853]
+shape = SubResource("RectangleShape2D_3axp0")

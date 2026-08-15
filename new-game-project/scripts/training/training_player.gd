@@ -35,6 +35,11 @@ var shield_timer := 0.0
 
 func _ready() -> void:
 	add_to_group("player")
+	# Keep the camera upright while the body rotates toward the mouse.
+	# Without this, look/aim feeds back into world mouse coords and aim
+	# locks up whenever you move and turn at the same time.
+	if camera:
+		camera.ignore_rotation = true
 	if muzzle_flash:
 		muzzle_flash.visible = false
 
@@ -46,7 +51,9 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Vector2(
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
 		Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
-	).normalized()
+	)
+	if input_dir.length_squared() > 1.0:
+		input_dir = input_dir.normalized()
 
 	fire_timer = max(fire_timer - delta, 0.0)
 	sandevistan_cd_timer = max(sandevistan_cd_timer - delta, 0.0)
@@ -64,11 +71,18 @@ func _physics_process(delta: float) -> void:
 	velocity = input_dir * speed
 	move_and_slide()
 
-	look_at(get_global_mouse_position())
+	_aim_at_mouse()
 
 	if Input.is_action_pressed("shoot") and fire_timer <= 0.0 and loaded_token != "":
 		_shoot()
 		fire_timer = fire_rate
+
+
+func _aim_at_mouse() -> void:
+	var to_mouse := get_global_mouse_position() - global_position
+	if to_mouse.length_squared() < 0.0001:
+		return
+	rotation = to_mouse.angle()
 
 
 func _process(delta: float) -> void:

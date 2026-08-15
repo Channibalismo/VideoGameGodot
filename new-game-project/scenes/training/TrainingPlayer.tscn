@@ -9,9 +9,6 @@ size = Vector2(40, 40)
 [node name="TrainingPlayer" type="CharacterBody2D" unique_id=1125696549]
 collision_layer = 2
 script = ExtResource("1_ngkkv")
-dash_speed = null
-dash_duration = null
-dash_cooldown = null
 bullet_scene = ExtResource("2_jk2c2")
 
 [node name="Square" type="ColorRect" parent="." unique_id=1502995873]
@@ -31,6 +28,7 @@ offset_bottom = 4.0
 shape = SubResource("RectangleShape2D_5hwce")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=410216965]
+ignore_rotation = true
 zoom = Vector2(1.2, 1.2)
 
 [node name="MuzzleFlash" type="ColorRect" parent="." unique_id=1154871955]

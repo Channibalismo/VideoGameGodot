@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://c6e7xse6t062x"]
+
+[ext_resource type="Script" uid="uid://jo0kvru8oj4" path="res://scripts/combat/bots/signal_bot.gd" id="1_6si81"]
+[ext_resource type="Script" uid="uid://d3ecqh8evyr2x" path="res://scripts/combat/enemy_hurtbox.gd" id="2_kxnv2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2a38"]
+size = Vector2(36, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixnkl"]
+size = Vector2(40, 40)
+
+[node name="SignalBot" type="CharacterBody2D" unique_id=1290939156]
+collision_layer = 8
+script = ExtResource("1_6si81")
+
+[node name="Square" type="ColorRect" parent="." unique_id=1513839415]
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+color = Color(0.85, 0.35, 0.95, 1)
+
+[node name="ErrorLabel" type="Label" parent="." unique_id=67208640]
+offset_left = -70.0
+offset_top = -55.0
+offset_right = 70.0
+offset_bottom = -25.0
+text = "jammingFreq = ON  // needs String[]"
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1826144341]
+shape = SubResource("RectangleShape2D_k2a38")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=55452490]
+collision_mask = 2
+script = ExtResource("2_kxnv2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1224050067]
+shape = SubResource("RectangleShape2D_ixnkl")
