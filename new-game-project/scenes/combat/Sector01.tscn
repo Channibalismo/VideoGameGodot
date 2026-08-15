@@ -4,6 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://q4ppctehuh30" path="res://scenes/training/TrainingPlayer.tscn" id="2_u17bf"]
 [ext_resource type="PackedScene" uid="uid://btxwv5u1kxdgr" path="res://scenes/combat/CombatBot.tscn" id="3_g5yct"]
 [ext_resource type="PackedScene" uid="uid://oeimh0a6n4m3" path="res://scenes/training/CompilerHUD.tscn" id="4_xbbkt"]
+[ext_resource type="PackedScene" uid="uid://bvf4owdy383hp" path="res://scenes/combat/HouseBot.tscn" id="5_wwk3u"]
+[ext_resource type="PackedScene" uid="uid://c7noxsbsafn4a" path="res://scenes/combat/ArmedBot.tscn" id="6_r60p7"]
+[ext_resource type="PackedScene" uid="uid://tqktt6hw18ga" path="res://scenes/combat/ExplodingBot.tscn" id="7_1q0pa"]
+[ext_resource type="PackedScene" uid="uid://dp83qnjk6r68d" path="res://scenes/combat/ShieldBot.tscn" id="8_er7sk"]
+[ext_resource type="PackedScene" uid="uid://dnc0lbbft2e4q" path="res://scenes/combat/MedBot.tscn" id="9_qoca4"]
+[ext_resource type="PackedScene" uid="uid://c6e7xse6t062x" path="res://scenes/combat/SignalBot.tscn" id="10_oihsu"]
+[ext_resource type="PackedScene" uid="uid://foohukvuimj8" path="res://scenes/combat/CourierBot.tscn" id="11_u8f02"]
+[ext_resource type="PackedScene" uid="uid://ib2vxl4ii6qa" path="res://scenes/combat/CraneBot.tscn" id="12_csy2b"]
+[ext_resource type="PackedScene" uid="uid://n2ojhbfmvf1i" path="res://scenes/combat/MimicBot.tscn" id="13_yerib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbkyo"]
 size = Vector2(2140, 20)
@@ -52,17 +61,14 @@ position = Vector2(875, 350)
 
 [node name="Enemy2" parent="." unique_id=1509112152 instance=ExtResource("3_g5yct")]
 position = Vector2(1225, 1050)
-required_token = "!"
 error_text = "isHostile = true  (needs !)"
 
 [node name="Enemy3" parent="." unique_id=387985657 instance=ExtResource("3_g5yct")]
 position = Vector2(1662, 438)
-required_token = "=0"
 error_text = "robotHealth = 10  (needs =0)"
 
 [node name="Enemy4" parent="." unique_id=2095850104 instance=ExtResource("3_g5yct")]
 position = Vector2(1750, 962)
-required_token = "break;"
 error_text = "while(attacking) { } // stuck looping"
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1932301041]
@@ -105,3 +111,30 @@ text = "SECTOR CLEARED"
 horizontal_alignment = 1
 
 [node name="CompilerHUD" parent="UI" unique_id=865197942 instance=ExtResource("4_xbbkt")]
+
+[node name="HouseBot" parent="." unique_id=2117221467 instance=ExtResource("5_wwk3u")]
+position = Vector2(450, 250)
+
+[node name="ArmedBot" parent="." unique_id=525491295 instance=ExtResource("6_r60p7")]
+position = Vector2(450, 1150)
+
+[node name="ExplodingBot" parent="." unique_id=1107346000 instance=ExtResource("7_1q0pa")]
+position = Vector2(1050, 150)
+
+[node name="ShieldBot" parent="." unique_id=1709129284 instance=ExtResource("8_er7sk")]
+position = Vector2(1900, 700)
+
+[node name="MedBot" parent="." unique_id=333379857 instance=ExtResource("9_qoca4")]
+position = Vector2(1300, 700)
+
+[node name="SignalBot" parent="." unique_id=1290939156 instance=ExtResource("10_oihsu")]
+position = Vector2(700, 1150)
+
+[node name="CourierBot" parent="." unique_id=282960319 instance=ExtResource("11_u8f02")]
+position = Vector2(1900, 250)
+
+[node name="CraneBot" parent="." unique_id=1016564598 instance=ExtResource("12_csy2b")]
+position = Vector2(1050, 1250)
+
+[node name="MimicBot" parent="." unique_id=1700906947 instance=ExtResource("13_yerib")]
+position = Vector2(300, 950)

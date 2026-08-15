@@ -51,7 +51,6 @@ offset_left = 95.0
 offset_top = 44.0
 offset_right = 300.0
 offset_bottom = 76.0
-max_length = 8
 
 [node name="JavaLabel" type="Label" parent="Panel" unique_id=504665593]
 layout_mode = 0

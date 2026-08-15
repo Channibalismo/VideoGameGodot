@@ -37,3 +37,11 @@ script = ExtResource("2_6kfp6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=953002437]
 shape = SubResource("RectangleShape2D_pj2c5")
+
+[node name="NameLabel" type="Label" parent="." unique_id=998674751]
+offset_left = -60.0
+offset_top = -78.0
+offset_right = 60.0
+offset_bottom = -58.0
+text = "HouseBot"
+horizontal_alignment = 1

@@ -37,3 +37,11 @@ script = ExtResource("2_4do0s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=703136599]
 shape = SubResource("RectangleShape2D_ufixy")
+
+[node name="NameLabel" type="Label" parent="." unique_id=2104322337]
+offset_left = -60.0
+offset_top = -78.0
+offset_right = 60.0
+offset_bottom = -58.0
+text = "Survivor?"
+horizontal_alignment = 1

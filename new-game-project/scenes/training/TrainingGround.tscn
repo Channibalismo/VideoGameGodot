@@ -1,39 +1,142 @@
 [gd_scene format=3 uid="uid://cgva5oivtgp5s"]
 
-[ext_resource type="Script" uid="uid://d1no53we4snfq" path="res://scripts/combat/bots/mimic_bot.gd" id="1_fmcm3"]
-[ext_resource type="Script" uid="uid://d3ecqh8evyr2x" path="res://scripts/combat/enemy_hurtbox.gd" id="2_o3j11"]
+[ext_resource type="Script" uid="uid://csx3tlmmpt8it" path="res://scripts/training/training_ground.gd" id="1_o3j11"]
+[ext_resource type="PackedScene" uid="uid://q4ppctehuh30" path="res://scenes/training/TrainingPlayer.tscn" id="2_2knfd"]
+[ext_resource type="PackedScene" uid="uid://cxronprfqt4wk" path="res://scenes/training/TrainingTarget.tscn" id="3_5p1af"]
+[ext_resource type="PackedScene" uid="uid://oeimh0a6n4m3" path="res://scenes/training/CompilerHUD.tscn" id="4_2knfd"]
+[ext_resource type="PackedScene" uid="uid://bvf4owdy383hp" path="res://scenes/combat/HouseBot.tscn" id="5_rg300"]
+[ext_resource type="PackedScene" uid="uid://c7noxsbsafn4a" path="res://scenes/combat/ArmedBot.tscn" id="6_6sxri"]
+[ext_resource type="PackedScene" uid="uid://btxwv5u1kxdgr" path="res://scenes/combat/CombatBot.tscn" id="7_usovg"]
+[ext_resource type="PackedScene" uid="uid://tqktt6hw18ga" path="res://scenes/combat/ExplodingBot.tscn" id="8_ed54m"]
+[ext_resource type="PackedScene" uid="uid://dp83qnjk6r68d" path="res://scenes/combat/ShieldBot.tscn" id="9_rjfjq"]
+[ext_resource type="PackedScene" uid="uid://dnc0lbbft2e4q" path="res://scenes/combat/MedBot.tscn" id="10_8al10"]
+[ext_resource type="PackedScene" uid="uid://c6e7xse6t062x" path="res://scenes/combat/SignalBot.tscn" id="11_5p17l"]
+[ext_resource type="PackedScene" uid="uid://foohukvuimj8" path="res://scenes/combat/CourierBot.tscn" id="12_cf35n"]
+[ext_resource type="PackedScene" uid="uid://ib2vxl4ii6qa" path="res://scenes/combat/CraneBot.tscn" id="13_3kmny"]
+[ext_resource type="PackedScene" uid="uid://n2ojhbfmvf1i" path="res://scenes/combat/MimicBot.tscn" id="14_f70q8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wpjl"]
-size = Vector2(36, 36)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbijj"]
+size = Vector2(3640, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufixy"]
-size = Vector2(40, 40)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mt1s"]
+size = Vector2(3640, 20)
 
-[node name="MimicBot" type="CharacterBody2D" unique_id=1700906947]
-collision_layer = 8
-script = ExtResource("1_fmcm3")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vj6cx"]
+size = Vector2(20, 2440)
 
-[node name="Square" type="ColorRect" parent="." unique_id=1454456442]
-offset_left = -18.0
-offset_top = -18.0
-offset_right = 18.0
-offset_bottom = 18.0
-color = Color(0.45, 0.75, 0.95, 1)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j0ft"]
+size = Vector2(20, 2440)
 
-[node name="ErrorLabel" type="Label" parent="." unique_id=1821164700]
-offset_left = -70.0
-offset_top = -55.0
-offset_right = 70.0
-offset_bottom = -25.0
-text = "String role = \"Survivor\""
-horizontal_alignment = 1
+[node name="TrainingGround" type="Node2D" unique_id=165348608]
+script = ExtResource("1_o3j11")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=387178246]
-shape = SubResource("RectangleShape2D_7wpjl")
+[node name="Floor" type="ColorRect" parent="." unique_id=1936517489]
+offset_right = 3600.0
+offset_bottom = 2400.0
+color = Color(0.16, 0.16, 0.18, 1)
 
-[node name="Hurtbox" type="Area2D" parent="." unique_id=785383884]
-collision_mask = 2
-script = ExtResource("2_o3j11")
+[node name="Walls" type="StaticBody2D" parent="." unique_id=1376996863]
+collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=703136599]
-shape = SubResource("RectangleShape2D_ufixy")
+[node name="Top" type="CollisionShape2D" parent="Walls" unique_id=1466578305]
+position = Vector2(1800, -10)
+shape = SubResource("RectangleShape2D_bbijj")
+
+[node name="Bottom" type="CollisionShape2D" parent="Walls" unique_id=416939973]
+position = Vector2(1800, 2410)
+shape = SubResource("RectangleShape2D_8mt1s")
+
+[node name="Left" type="CollisionShape2D" parent="Walls" unique_id=1835260174]
+position = Vector2(-10, 1200)
+shape = SubResource("RectangleShape2D_vj6cx")
+
+[node name="Right" type="CollisionShape2D" parent="Walls" unique_id=366692514]
+position = Vector2(3610, 1200)
+shape = SubResource("RectangleShape2D_7j0ft")
+
+[node name="TrainingPlayer" parent="." unique_id=1125696549 instance=ExtResource("2_2knfd")]
+position = Vector2(420, 1200)
+
+[node name="Target" parent="." unique_id=2137333302 instance=ExtResource("3_5p1af")]
+position = Vector2(1650, 420)
+
+[node name="Target2" parent="." unique_id=1995267451 instance=ExtResource("3_5p1af")]
+position = Vector2(1650, 1200)
+required_token = "!"
+error_text = "isHostile = true  (needs !)"
+
+[node name="Target3" parent="." unique_id=218577461 instance=ExtResource("3_5p1af")]
+position = Vector2(1650, 1980)
+required_token = "=0"
+error_text = "robotHealth = 10  (needs =0)"
+
+[node name="Target4" parent="." unique_id=667922749 instance=ExtResource("3_5p1af")]
+position = Vector2(2850, 420)
+required_token = "[]"
+error_text = "ERROR: expected [] declaration"
+
+[node name="Target5" parent="." unique_id=1488447560 instance=ExtResource("3_5p1af")]
+position = Vector2(2850, 1200)
+required_token = "//"
+error_text = "ERROR: unshielded line"
+
+[node name="Target6" parent="." unique_id=1099783227 instance=ExtResource("3_5p1af")]
+position = Vector2(2850, 1980)
+required_token = "break;"
+error_text = "while(attacking) { } // stuck looping"
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=2018219147]
+
+[node name="BackButton" type="Button" parent="UI" unique_id=1574173003]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 28.0
+offset_bottom = 28.0
+text = "< Back"
+
+[node name="HintLabel" type="Label" parent="UI" unique_id=216855326]
+offset_left = 260.0
+offset_top = 20.0
+offset_right = 261.0
+offset_bottom = 43.0
+text = "WASD move | Mouse aim | R rack a round | Click fire | Shift = Sandevistan | Rounds: ; ! =0 [] // break;"
+
+[node name="LoadedLabel" type="Label" parent="UI" unique_id=872178541]
+modulate = Color(1, 0.9, 0.4, 1)
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 21.0
+offset_bottom = 83.0
+text = "LOADED: (none) — press R"
+
+[node name="CompilerHUD" parent="UI" unique_id=865197942 instance=ExtResource("4_2knfd")]
+
+[node name="HouseBot" parent="." unique_id=2117221467 instance=ExtResource("5_rg300")]
+position = Vector2(600, 300)
+
+[node name="ArmedBot" parent="." unique_id=525491295 instance=ExtResource("6_6sxri")]
+position = Vector2(1100, 300)
+
+[node name="CombatBotPractice" parent="." unique_id=575380211 instance=ExtResource("7_usovg")]
+position = Vector2(600, 750)
+
+[node name="ExplodingBot" parent="." unique_id=1107346000 instance=ExtResource("8_ed54m")]
+position = Vector2(1100, 750)
+
+[node name="ShieldBot" parent="." unique_id=1709129284 instance=ExtResource("9_rjfjq")]
+position = Vector2(600, 1200)
+
+[node name="MedBot" parent="." unique_id=333379857 instance=ExtResource("10_8al10")]
+position = Vector2(1100, 1200)
+
+[node name="SignalBot" parent="." unique_id=1290939156 instance=ExtResource("11_5p17l")]
+position = Vector2(600, 1650)
+
+[node name="CourierBot" parent="." unique_id=282960319 instance=ExtResource("12_cf35n")]
+position = Vector2(1100, 1650)
+
+[node name="CraneBot" parent="." unique_id=1016564598 instance=ExtResource("13_3kmny")]
+position = Vector2(600, 2100)
+
+[node name="MimicBot" parent="." unique_id=1700906947 instance=ExtResource("14_f70q8")]
+position = Vector2(1100, 2100)
