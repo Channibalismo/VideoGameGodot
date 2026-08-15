@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cuufs75wxxucq" path="res://scripts/lesson_node.gd" id="1_ej7nn"]
 [ext_resource type="Script" uid="uid://u6igdaytq4eg" path="res://scripts/world_map.gd" id="1_fgl0d"]
+[ext_resource type="Texture2D" uid="uid://cllbpy4bc2qe8" path="res://assets/backgrounds/cartoon-style-wood-texture_1110-882.png" id="2_pj4xh"]
+[ext_resource type="Script" uid="uid://c86k81vhsg4ry" path="res://scripts/world_map_player.gd" id="4_0laof"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fgl0d"]
 radius = 26.0
@@ -18,8 +20,6 @@ offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fgl0d")
-
-[node name="Background" type="Sprite2D" parent="." unique_id=866614149]
 
 [node name="Paths" type="Line2D" parent="." unique_id=1213304771]
 points = PackedVector2Array(950, 580, 750, 520, 550, 460, 300, 400, 500, 340, 700, 280, 500, 220, 700, 160, 900, 100)
@@ -171,22 +171,40 @@ offset_top = 30.0
 offset_right = 10.0
 offset_bottom = 53.0
 
-[node name="PlayerMaker" type="Sprite2D" parent="." unique_id=1879169059]
-
-[node name="BackButton" type="Button" parent="." unique_id=977719434]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-
-[node name="XPLabel" type="Label" parent="." unique_id=2133351450]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="CoinsLabel" type="Label" parent="." unique_id=1426386676]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="PlayerMarker" type="Sprite2D" parent="." unique_id=1879169059]
+script = ExtResource("4_0laof")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=712098566]
 position = Vector2(561, 498)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=93260797]
+
+[node name="Background" type="TextureRect" parent="UI" unique_id=1415823564]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("2_pj4xh")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="XPLabel" type="Label" parent="UI" unique_id=2133351450]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CoinsLabel" type="Label" parent="UI" unique_id=1426386676]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="BackButton" type="Button" parent="UI" unique_id=977719434]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="HintLabel" type="Label" parent="UI" unique_id=619290702]
+offset_left = 20.0
+offset_top = 610.0
+offset_right = 21.0
+offset_bottom = 633.0
+text = "A/D move  |  Enter play lesson"
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=1102475043]
+layer = -1
