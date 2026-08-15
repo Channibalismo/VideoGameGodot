@@ -2,12 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bg5fl0hs4hoah" path="res://scripts/start_playing_menu.gd" id="1_n38a7"]
 [ext_resource type="FontFile" uid="uid://cc3qys61w5p4m" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="2_l0nyk"]
-<<<<<<< HEAD
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ukcvp"]
-=======
 [ext_resource type="Texture2D" uid="uid://cllbpy4bc2qe8" path="res://assets/backgrounds/cartoon-style-wood-texture_1110-882.png" id="2_qoq3e"]
->>>>>>> c406e3c43cde83c0d7b7267a70e0396d0a16735a
 
 [node name="StartPlayingMenu" type="Control" unique_id=1243073910]
 layout_mode = 3
