@@ -59,17 +59,49 @@ position = Vector2(260, 700)
 [node name="Enemy1" parent="." unique_id=575380211 instance=ExtResource("3_g5yct")]
 position = Vector2(875, 350)
 
+[node name="NameLabel" type="Label" parent="Enemy1" unique_id=1531452484]
+offset_left = -70.0
+offset_top = 25.0
+offset_right = 70.0
+offset_bottom = 45.0
+text = "Bot"
+horizontal_alignment = 1
+
 [node name="Enemy2" parent="." unique_id=1509112152 instance=ExtResource("3_g5yct")]
 position = Vector2(1225, 1050)
 error_text = "CombatBot: while(attacking){ } // needs break;"
+
+[node name="NameLabel" type="Label" parent="Enemy2" unique_id=469563424]
+offset_left = -70.0
+offset_top = 25.0
+offset_right = 70.0
+offset_bottom = 45.0
+text = "Bot"
+horizontal_alignment = 1
 
 [node name="Enemy3" parent="." unique_id=387985657 instance=ExtResource("3_g5yct")]
 position = Vector2(1662, 438)
 error_text = "CombatBot: while(attacking){ } // needs break;"
 
+[node name="NameLabel" type="Label" parent="Enemy3" unique_id=1482773764]
+offset_left = -70.0
+offset_top = 25.0
+offset_right = 70.0
+offset_bottom = 45.0
+text = "Bot"
+horizontal_alignment = 1
+
 [node name="Enemy4" parent="." unique_id=2095850104 instance=ExtResource("3_g5yct")]
 position = Vector2(1750, 962)
 error_text = "CombatBot: while(attacking){ } // needs break;"
+
+[node name="NameLabel" type="Label" parent="Enemy4" unique_id=1259308368]
+offset_left = -70.0
+offset_top = 25.0
+offset_right = 70.0
+offset_bottom = 45.0
+text = "Bot"
+horizontal_alignment = 1
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1932301041]
 
@@ -115,26 +147,98 @@ horizontal_alignment = 1
 [node name="HouseBot" parent="." unique_id=2117221467 instance=ExtResource("5_wwk3u")]
 position = Vector2(450, 250)
 
+[node name="NameLabel" type="Label" parent="HouseBot" unique_id=510463484]
+offset_left = -70.0
+offset_top = 25.0
+offset_right = 70.0
+offset_bottom = 45.0
+text = "HouseBot"
+horizontal_alignment = 1
+
 [node name="ArmedBot" parent="." unique_id=525491295 instance=ExtResource("6_r60p7")]
 position = Vector2(450, 1150)
+
+[node name="NameLabel" type="Label" parent="ArmedBot" unique_id=276195456]
+offset_left = -70.0
+offset_top = 25.0
+offset_right = 70.0
+offset_bottom = 45.0
+text = "ArmedBot"
+horizontal_alignment = 1
 
 [node name="ExplodingBot" parent="." unique_id=1107346000 instance=ExtResource("7_1q0pa")]
 position = Vector2(1050, 150)
 
+[node name="NameLabel" type="Label" parent="ExplodingBot" unique_id=1030610486]
+offset_left = -70.0
+offset_top = 25.0
+offset_right = 70.0
+offset_bottom = 45.0
+text = "ExplodingBot"
+horizontal_alignment = 1
+
 [node name="ShieldBot" parent="." unique_id=1709129284 instance=ExtResource("8_er7sk")]
 position = Vector2(1900, 700)
+
+[node name="NameLabel" type="Label" parent="ShieldBot" unique_id=269518756]
+offset_left = -70.0
+offset_top = 25.0
+offset_right = 70.0
+offset_bottom = 45.0
+text = "ShieldBot"
+horizontal_alignment = 1
 
 [node name="MedBot" parent="." unique_id=333379857 instance=ExtResource("9_qoca4")]
 position = Vector2(1300, 700)
 
+[node name="NameLabel" type="Label" parent="MedBot" unique_id=1464398145]
+offset_left = -70.0
+offset_top = 25.0
+offset_right = 70.0
+offset_bottom = 45.0
+text = "MedBot"
+horizontal_alignment = 1
+
 [node name="SignalBot" parent="." unique_id=1290939156 instance=ExtResource("10_oihsu")]
 position = Vector2(700, 1150)
+
+[node name="NameLabel" type="Label" parent="SignalBot" unique_id=1433862411]
+offset_left = -70.0
+offset_top = 25.0
+offset_right = 70.0
+offset_bottom = 45.0
+text = "SignalBot"
+horizontal_alignment = 1
 
 [node name="CourierBot" parent="." unique_id=282960319 instance=ExtResource("11_u8f02")]
 position = Vector2(1900, 250)
 
+[node name="NameLabel" type="Label" parent="CourierBot" unique_id=1186163501]
+offset_left = -70.0
+offset_top = 25.0
+offset_right = 70.0
+offset_bottom = 45.0
+text = "CourierBot"
+horizontal_alignment = 1
+
 [node name="CraneBot" parent="." unique_id=1016564598 instance=ExtResource("12_csy2b")]
 position = Vector2(1050, 1250)
 
+[node name="NameLabel" type="Label" parent="CraneBot" unique_id=1666665697]
+offset_left = -70.0
+offset_top = 25.0
+offset_right = 70.0
+offset_bottom = 45.0
+text = "CraneBot"
+horizontal_alignment = 1
+
 [node name="MimicBot" parent="." unique_id=1700906947 instance=ExtResource("13_yerib")]
 position = Vector2(300, 950)
+
+[node name="NameLabel" type="Label" parent="MimicBot" unique_id=1958799683]
+offset_left = -70.0
+offset_top = 25.0
+offset_right = 70.0
+offset_bottom = 45.0
+text = "MimicBot"
+horizontal_alignment = 1
