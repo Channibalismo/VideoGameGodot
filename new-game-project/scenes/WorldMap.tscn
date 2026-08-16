@@ -22,7 +22,7 @@ grow_vertical = 2
 script = ExtResource("1_fgl0d")
 
 [node name="Paths" type="Line2D" parent="." unique_id=1213304771]
-points = PackedVector2Array(950, 580, 750, 520, 550, 460, 300, 400, 500, 340, 700, 280, 500, 220, 700, 160, 900, 100)
+points = PackedVector2Array(950, 580, 750, 520, 550, 460, 300, 400, 500, 340, 700, 280, 500, 220, 700, 160, 900, 100, 1100, 60, 900, -20, 1100, -100, 900, -180)
 width = 6.0
 default_color = Color(0.545, 0.353, 0.169, 1)
 
@@ -166,6 +166,70 @@ lesson_number = 9
 shape = SubResource("CircleShape2D_fgl0d")
 
 [node name="Label" type="Label" parent="LessonNodes/Lesson9" unique_id=1979102327]
+offset_left = -30.0
+offset_top = 30.0
+offset_right = 10.0
+offset_bottom = 53.0
+
+[node name="Lesson10" type="Area2D" parent="LessonNodes" unique_id=84299156]
+position = Vector2(1100, 60)
+script = ExtResource("1_ej7nn")
+lesson_number = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="LessonNodes/Lesson10" unique_id=1476188485]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LessonNodes/Lesson10" unique_id=16181665]
+shape = SubResource("CircleShape2D_fgl0d")
+
+[node name="Label" type="Label" parent="LessonNodes/Lesson10" unique_id=1274375752]
+offset_left = -30.0
+offset_top = 30.0
+offset_right = 10.0
+offset_bottom = 53.0
+
+[node name="Lesson11" type="Area2D" parent="LessonNodes" unique_id=628303324]
+position = Vector2(900, -20)
+script = ExtResource("1_ej7nn")
+lesson_number = 11
+
+[node name="Sprite2D" type="Sprite2D" parent="LessonNodes/Lesson11" unique_id=403488377]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LessonNodes/Lesson11" unique_id=1681188335]
+shape = SubResource("CircleShape2D_fgl0d")
+
+[node name="Label" type="Label" parent="LessonNodes/Lesson11" unique_id=211349085]
+offset_left = -30.0
+offset_top = 30.0
+offset_right = 10.0
+offset_bottom = 53.0
+
+[node name="Lesson12" type="Area2D" parent="LessonNodes" unique_id=1732906600]
+position = Vector2(1100, -100)
+script = ExtResource("1_ej7nn")
+lesson_number = 12
+
+[node name="Sprite2D" type="Sprite2D" parent="LessonNodes/Lesson12" unique_id=220360367]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LessonNodes/Lesson12" unique_id=1288295448]
+shape = SubResource("CircleShape2D_fgl0d")
+
+[node name="Label" type="Label" parent="LessonNodes/Lesson12" unique_id=534759170]
+offset_left = -30.0
+offset_top = 30.0
+offset_right = 10.0
+offset_bottom = 53.0
+
+[node name="Lesson13" type="Area2D" parent="LessonNodes" unique_id=1677938226]
+position = Vector2(900, -180)
+script = ExtResource("1_ej7nn")
+lesson_number = 13
+
+[node name="Sprite2D" type="Sprite2D" parent="LessonNodes/Lesson13" unique_id=629265859]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LessonNodes/Lesson13" unique_id=1427186100]
+shape = SubResource("CircleShape2D_fgl0d")
+
+[node name="Label" type="Label" parent="LessonNodes/Lesson13" unique_id=625221207]
 offset_left = -30.0
 offset_top = 30.0
 offset_right = 10.0

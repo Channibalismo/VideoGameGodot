@@ -39,3 +39,11 @@ script = ExtResource("2_kxnv2")
 shape = SubResource("RectangleShape2D_ixnkl")
 
 [node name="NameLabel" type="Label" parent="." unique_id=1751716594]
+modulate = Color(0.9, 0.9, 0.9, 0.8)
+offset_left = -70.0
+offset_top = 25.0
+offset_right = 70.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 14
+text = "SignalBot"
+horizontal_alignment = 1

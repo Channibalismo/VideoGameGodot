@@ -6,7 +6,7 @@ extends Control
 ## by lesson_node.gd) and also snaps the walking marker there.
 
 ## Lesson1..Lesson9, in the same left-to-right order as the drawn path.
-const PATH_ORDER := [1, 2, 3, 4, 5, 6, 7, 8, 9]
+const PATH_ORDER := [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 const WALK_DURATION := 0.22
 const CAMERA_FOLLOW_SPEED := 6.0
 
