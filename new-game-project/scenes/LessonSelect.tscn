@@ -1,9 +1,37 @@
 [gd_scene format=3 uid="uid://b6i10aua55aje"]
 
-[node name="Lessons" type="Control" unique_id=544545709]
+[ext_resource type="Texture2D" uid="uid://cx7sjffkwdmmh" path="res://Lessons/intro/01-intro_page-0002.jpg" id="2_1xpr7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2u8ur"]
+load_path = "res://.godot/imported/01-intro_page-0001.jpg-5b15977280b1cfef1ba375c6ecfe5b7b.ctex"
+
+[node name="LessonsViewer" type="Control" unique_id=544545709]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 2.0
+offset_right = 5.0
+offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=756289698]
+layout_mode = 0
+offset_left = 212.0
+offset_right = 1723.0
+offset_bottom = 1075.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=674696822]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer" unique_id=1014219547]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_2u8ur")
+stretch_mode = 6
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/VBoxContainer" unique_id=1785002343]
+layout_mode = 2
+texture = ExtResource("2_1xpr7")

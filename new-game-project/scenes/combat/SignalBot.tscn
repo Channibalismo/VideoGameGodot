@@ -37,3 +37,5 @@ script = ExtResource("2_kxnv2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1224050067]
 shape = SubResource("RectangleShape2D_ixnkl")
+
+[node name="NameLabel" type="Label" parent="." unique_id=1751716594]
