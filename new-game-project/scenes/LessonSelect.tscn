@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://b6i10aua55aje"]
 
 [ext_resource type="Texture2D" uid="uid://cx7sjffkwdmmh" path="res://Lessons/01-intro/01-intro_page-0002.jpg" id="1_2u8ur"]
+[ext_resource type="Texture2D" uid="uid://bhawgt7kk2npx" path="res://Lessons/01-intro/01-intro_page-0003.jpg" id="2_1xpr7"]
+[ext_resource type="Texture2D" uid="uid://dkx1x02ape404" path="res://Lessons/01-intro/01-intro_page-0004.jpg" id="3_jnrhb"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2u8ur"]
 load_path = "res://.godot/imported/01-intro_page-0001.jpg-5b15977280b1cfef1ba375c6ecfe5b7b.ctex"
@@ -38,9 +40,11 @@ texture = ExtResource("1_2u8ur")
 
 [node name="TextureRect3" type="TextureRect" parent="ScrollContainer/VBoxContainer" unique_id=1727173831]
 layout_mode = 2
+texture = ExtResource("2_1xpr7")
 
 [node name="TextureRect4" type="TextureRect" parent="ScrollContainer/VBoxContainer" unique_id=568465921]
 layout_mode = 2
+texture = ExtResource("3_jnrhb")
 
 [node name="TextureRect5" type="TextureRect" parent="ScrollContainer/VBoxContainer" unique_id=953934435]
 layout_mode = 2
