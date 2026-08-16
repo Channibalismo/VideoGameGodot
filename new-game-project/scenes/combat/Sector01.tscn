@@ -61,15 +61,15 @@ position = Vector2(875, 350)
 
 [node name="Enemy2" parent="." unique_id=1509112152 instance=ExtResource("3_g5yct")]
 position = Vector2(1225, 1050)
-error_text = "isHostile = true  (needs !)"
+error_text = "CombatBot: while(attacking){ } // needs break;"
 
 [node name="Enemy3" parent="." unique_id=387985657 instance=ExtResource("3_g5yct")]
 position = Vector2(1662, 438)
-error_text = "robotHealth = 10  (needs =0)"
+error_text = "CombatBot: while(attacking){ } // needs break;"
 
 [node name="Enemy4" parent="." unique_id=2095850104 instance=ExtResource("3_g5yct")]
 position = Vector2(1750, 962)
-error_text = "while(attacking) { } // stuck looping"
+error_text = "CombatBot: while(attacking){ } // needs break;"
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1932301041]
 

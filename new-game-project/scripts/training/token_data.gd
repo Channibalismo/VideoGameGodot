@@ -35,6 +35,21 @@ const TOKENS := {
 		"java": "while (attacking) {\n\tbreak; // exits the loop immediately\n}",
 		"effect": "Heavy stun — cancels an enemy's attack loop."
 	},
+	"null": {
+		"name": "Null Pointer Round",
+		"java": "Object charge = null; // clears the reference",
+		"effect": "Alternate disarm round — nulls out a live charge before it detonates."
+	},
+	"(Player)": {
+		"name": "Type-Cast Bullet",
+		"java": "(Player) target = (Player) enemy; // re-casts the reference type",
+		"effect": "Re-casts a hostile unit's target type — makes it treat you as an ally."
+	},
+	"String[]": {
+		"name": "String Array Piercer",
+		"java": "String[] freqList = new String[3];\n// [] on a String declares an array of them",
+		"effect": "Piercing beam — cuts through cover and signal jamming."
+	},
 }
 
 

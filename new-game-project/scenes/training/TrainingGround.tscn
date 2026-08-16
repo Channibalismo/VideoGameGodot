@@ -113,30 +113,40 @@ text = "LOADED: (none) — press R"
 
 [node name="HouseBot" parent="." unique_id=2117221467 instance=ExtResource("5_rg300")]
 position = Vector2(600, 300)
+practice_mode = true
 
 [node name="ArmedBot" parent="." unique_id=525491295 instance=ExtResource("6_6sxri")]
 position = Vector2(1100, 300)
+practice_mode = true
 
 [node name="CombatBotPractice" parent="." unique_id=575380211 instance=ExtResource("7_usovg")]
 position = Vector2(600, 750)
+practice_mode = true
 
 [node name="ExplodingBot" parent="." unique_id=1107346000 instance=ExtResource("8_ed54m")]
 position = Vector2(1100, 750)
+practice_mode = true
 
 [node name="ShieldBot" parent="." unique_id=1709129284 instance=ExtResource("9_rjfjq")]
 position = Vector2(600, 1200)
+practice_mode = true
 
 [node name="MedBot" parent="." unique_id=333379857 instance=ExtResource("10_8al10")]
 position = Vector2(1100, 1200)
+practice_mode = true
 
 [node name="SignalBot" parent="." unique_id=1290939156 instance=ExtResource("11_5p17l")]
 position = Vector2(600, 1650)
+practice_mode = true
 
 [node name="CourierBot" parent="." unique_id=282960319 instance=ExtResource("12_cf35n")]
 position = Vector2(1100, 1650)
+practice_mode = true
 
 [node name="CraneBot" parent="." unique_id=1016564598 instance=ExtResource("13_3kmny")]
 position = Vector2(600, 2100)
+practice_mode = true
 
 [node name="MimicBot" parent="." unique_id=1700906947 instance=ExtResource("14_f70q8")]
 position = Vector2(1100, 2100)
+practice_mode = true

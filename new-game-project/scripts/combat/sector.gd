@@ -41,6 +41,9 @@ func _on_enemy_neutralized(_is_neutralized: bool) -> void:
 
 
 func _on_player_died() -> void:
+	get_tree().paused = false
+	if hud.visible:
+		hud.close()
 	_show_banner("TERMINATED", Color(1.0, 0.3, 0.3))
 	await get_tree().create_timer(0.9).timeout
 	get_tree().reload_current_scene()

@@ -14,6 +14,9 @@ signal player_died
 @export var sandevistan_duration: float = 2.0
 @export var sandevistan_time_scale: float = 0.3
 @export var sandevistan_cooldown: float = 5.0
+@export var afterimage_interval: float = 0.045
+@export var afterimage_fade_time: float = 0.3
+@export var afterimage_color: Color = Color(0.6, 0.95, 1.0, 0.35)
 
 @export_group("Comment Shield")
 @export var shield_duration: float = 1.2
@@ -25,6 +28,8 @@ var shake_trauma := 0.0
 
 var sandevistan_active := false
 var sandevistan_cd_timer := 0.0
+var afterimage_timer := 0.0
+var afterimages: Array[Node] = []
 
 var shield_active := false
 var shield_timer := 0.0
@@ -65,6 +70,12 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("sandevistan") and sandevistan_cd_timer <= 0.0 and not sandevistan_active:
 		_activate_sandevistan()
+
+	if sandevistan_active:
+		afterimage_timer -= delta
+		if afterimage_timer <= 0.0:
+			afterimage_timer = afterimage_interval
+			_spawn_afterimage()
 
 	# The player always moves at full speed — Sandevistan doesn't touch
 	# this, only CombatTime.scale (read by enemies) changes.
@@ -114,13 +125,49 @@ func _activate_sandevistan() -> void:
 	CombatTime.scale = sandevistan_time_scale
 	modulate = Color(0.6, 0.95, 1.0)
 	shake(0.15)
+	afterimage_timer = 0.0
 	# ignore_time_scale=true so the ability's own duration is real-world
 	# seconds, not stretched out by the slow-mo it's causing.
 	await get_tree().create_timer(sandevistan_duration, true, false, true).timeout
 	sandevistan_active = false
 	CombatTime.scale = 1.0
+	_clear_afterimages()
 	if not shield_active:
 		modulate = Color(1.0, 1.0, 1.0)
+
+
+func _spawn_afterimage() -> void:
+	var ghost := Node2D.new()
+	ghost.global_position = global_position
+	ghost.rotation = rotation
+	ghost.z_index = -1
+
+	var visual := ColorRect.new()
+	visual.offset_left = -20.0
+	visual.offset_top = -20.0
+	visual.offset_right = 20.0
+	visual.offset_bottom = 20.0
+	visual.color = afterimage_color
+	visual.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	ghost.add_child(visual)
+
+	get_tree().current_scene.add_child(ghost)
+	afterimages.append(ghost)
+
+	var tween := create_tween()
+	tween.tween_property(visual, "modulate:a", 0.0, afterimage_fade_time)
+	tween.finished.connect(func():
+		afterimages.erase(ghost)
+		if is_instance_valid(ghost):
+			ghost.queue_free()
+	)
+
+
+func _clear_afterimages() -> void:
+	for ghost in afterimages:
+		if is_instance_valid(ghost):
+			ghost.queue_free()
+	afterimages.clear()
 
 
 func _activate_shield() -> void:

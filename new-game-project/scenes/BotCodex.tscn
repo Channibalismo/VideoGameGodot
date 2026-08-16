@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://d1ynyee3307t4"]
+
+[ext_resource type="Script" uid="uid://cte3j81i1u4va" path="res://scripts/bot_codex.gd" id="1_8uqvx"]
+
+[node name="BotCodex" type="Control" unique_id=489589244]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_8uqvx")
+
+[node name="Dim" type="ColorRect" parent="." unique_id=1997900072]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.7)
+
+[node name="Panel" type="Panel" parent="." unique_id=1117396454]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -260.0
+offset_right = 320.0
+offset_bottom = 260.0
+
+[node name="TitleLabel" type="Label" parent="Panel" unique_id=427405652]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 14.0
+offset_right = 600.0
+offset_bottom = 46.0
+text = "[ BOT DATABASE — OVERRIDE CODES ]"
+
+[node name="Scroll" type="ScrollContainer" parent="Panel" unique_id=1133354621]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 600.0
+offset_bottom = 470.0
+
+[node name="EntryList" type="VBoxContainer" parent="Panel/Scroll" unique_id=23404082]
+custom_minimum_size = Vector2(560, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="CloseButton" type="Button" parent="Panel" unique_id=1783169352]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 480.0
+offset_right = 600.0
+offset_bottom = 512.0
+text = "Close"

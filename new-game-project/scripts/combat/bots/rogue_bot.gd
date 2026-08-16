@@ -12,6 +12,7 @@ signal neutralized_changed(is_neutralized: bool)
 @export var bot_color: Color = Color(0.85, 0.25, 0.2)
 @export var lethal: bool = true
 @export var counts_for_clear: bool = true
+@export var practice_mode: bool = false  ## Stationary, harmless — for training range display only.
 
 var neutralized := false
 var player: Node2D = null
@@ -41,6 +42,11 @@ func _physics_process(delta: float) -> void:
 	if neutralized:
 		velocity = Vector2.ZERO
 		move_and_slide()
+		return
+	if practice_mode:
+		# Stationary training-range display: no movement, no attacks,
+		# still fully hittable with the correct override code.
+		velocity = Vector2.ZERO
 		return
 	_bot_physics(delta * CombatTime.scale)
 	# _bot_physics sets `velocity` to a constant speed (direction * speed),
@@ -129,7 +135,7 @@ func _player_dir() -> Vector2:
 
 
 func _kill_player_if_lethal(body: Node = null) -> void:
-	if not lethal or neutralized:
+	if not lethal or neutralized or practice_mode:
 		return
 	var target := body
 	if target == null:
