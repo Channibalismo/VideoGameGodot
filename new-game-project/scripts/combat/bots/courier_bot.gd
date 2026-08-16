@@ -1,5 +1,5 @@
 extends RogueBot
-## CourierBot — alarm scout. =0 or break; before timer hits zero.
+## CourierBot — alarm scout. Assignment Overwrite (=0) silences the timer.
 
 signal alarm_triggered
 
@@ -15,7 +15,7 @@ var alarm_sent := false
 
 func _bot_ready() -> void:
 	bot_name = "CourierBot"
-	required_tokens = ["=0", "break;"]
+	required_tokens = ["=0"]
 	error_text = "alarmTimer = idle"
 	bot_color = Color(0.95, 0.85, 0.2)
 	_apply_visuals()
@@ -50,11 +50,8 @@ func _bot_physics(delta: float) -> void:
 		_trigger_alarm()
 
 
-func _on_correct_token(token: String) -> void:
-	if token == "=0":
-		_neutralize("alarmTimer = 0  // silenced")
-	else:
-		_neutralize("break;  // transmission aborted")
+func _on_correct_token(_token: String) -> void:
+	_neutralize("alarmTimer = 0  // silenced")
 
 
 func _trigger_alarm() -> void:
