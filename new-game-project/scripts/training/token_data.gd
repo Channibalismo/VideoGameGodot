@@ -1,54 +1,44 @@
 class_name TokenData
 extends RefCounted
-## Shared lookup table for Patch-Driver round types.
-## Add new rounds here later (=, [], //, break;) — everything else
-## (HUD, targets) reads from this single source.
+## Shared lookup table for Patch-Driver round types — the 7 core Java
+## override patches used to cure/decommission glitched robots.
+## Everything else (HUD, targets, codex) reads from this single source.
 
 const TOKENS := {
 	";": {
-		"name": "Semicolon Shot",
-		"java": "int hp = 10;\n// The ; marks the end of a statement.",
-		"effect": "Fixes missing-terminator glitches."
+		"name": "Semicolon Patch",
+		"java": "System.out.println(\"Cure\");",
+		"effect": "Basic syntax fix. Completes interrupted statements and instantly cures light glitched units (HouseBots)."
 	},
 	"!": {
-		"name": "NOT / Invert Bullet",
-		"java": "boolean isHostile = true;\nisHostile = !isHostile; // -> false",
-		"effect": "Inverts the target's hostile flag."
+		"name": "NOT / Invert Patch",
+		"java": "isHostile = !isHostile;",
+		"effect": "Logic inversion. Reverses target state/alignment (turns hostile ShieldBots into friendly barriers, disarms ExplodingBots)."
 	},
 	"=0": {
-		"name": "Assignment Bullet",
-		"java": "int robotHealth = 10;\nrobotHealth = 0; // = overwrites the value",
-		"effect": "Overwrites target health to zero — instant shutdown."
-	},
-	"[]": {
-		"name": "Array Shotgun",
-		"java": "Bullet[] magazine = new Bullet[3];\n// [] declares a collection of values",
-		"effect": "Fires a multi-pellet spread for crowd control."
-	},
-	"//": {
-		"name": "Comment Shield",
-		"java": "// This whole line is ignored by the compiler.",
-		"effect": "Deploys a barrier — incoming shots are \"commented out\"."
+		"name": "Assignment Overwrite",
+		"java": "targetHP = 0;",
+		"effect": "Variable overwrite. Directly sets internal enemy attributes to zero for instant decommissioning (ArmedBots, CourierBot timers)."
 	},
 	"break;": {
 		"name": "Break Slug",
-		"java": "while (attacking) {\n\tbreak; // exits the loop immediately\n}",
-		"effect": "Heavy stun — cancels an enemy's attack loop."
+		"java": "while(attacking) { break; }",
+		"effect": "Loop termination. Immediately exits hostile execution loops, interrupting and stunning charging enemies (CombatBots)."
 	},
-	"null": {
-		"name": "Null Pointer Round",
-		"java": "Object charge = null; // clears the reference",
-		"effect": "Alternate disarm round — nulls out a live charge before it detonates."
+	"//": {
+		"name": "Comment Shield",
+		"java": "// player.takeDamage(50);",
+		"effect": "Statement bypass. Deploys a barrier that comments out incoming projectile damage so collision detection ignores it."
 	},
 	"(Player)": {
-		"name": "Type-Cast Bullet",
-		"java": "(Player) target = (Player) enemy; // re-casts the reference type",
-		"effect": "Re-casts a hostile unit's target type — makes it treat you as an ally."
+		"name": "Class Type-Cast",
+		"java": "TargetType target = (Player) currentUnit;",
+		"effect": "Reference reassignment. Overrides targeting classes (forces MedBots to heal the player instead of enemy units)."
 	},
-	"String[]": {
-		"name": "String Array Piercer",
-		"java": "String[] freqList = new String[3];\n// [] on a String declares an array of them",
-		"effect": "Piercing beam — cuts through cover and signal jamming."
+	".setPower(false);": {
+		"name": "Terminal Shutdown",
+		"java": "system.setPower(false);",
+		"effect": "Multi-line terminal override. Disables heavy industrial hazards (CraneBots) directly via console ports."
 	},
 }
 

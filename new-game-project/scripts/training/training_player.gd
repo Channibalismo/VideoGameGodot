@@ -140,7 +140,6 @@ func _spawn_afterimage() -> void:
 	var ghost := Node2D.new()
 	ghost.global_position = global_position
 	ghost.rotation = rotation
-	ghost.z_index = -1
 
 	var visual := ColorRect.new()
 	visual.offset_left = -20.0
@@ -196,13 +195,7 @@ func _shoot() -> void:
 	_flash_muzzle()
 
 	var aim_dir := (get_global_mouse_position() - global_position).normalized()
-
-	if loaded_token == "[]":
-		# Array Shotgun — three-pellet spread.
-		for angle_deg in [-12.0, 0.0, 12.0]:
-			_fire_bullet(aim_dir.rotated(deg_to_rad(angle_deg)))
-	else:
-		_fire_bullet(aim_dir)
+	_fire_bullet(aim_dir)
 
 
 func _fire_bullet(direction: Vector2) -> void:

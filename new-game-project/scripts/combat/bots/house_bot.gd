@@ -1,5 +1,5 @@
 extends RogueBot
-## HouseBot — slow swarm unit. Weak; dies to ; or [].
+## HouseBot — slow swarm unit. Weak; dies to the Semicolon Patch.
 
 @export var move_speed: float = 70.0
 @export var detect_radius: float = 420.0
@@ -10,7 +10,7 @@ var patrol_target := Vector2.ZERO
 
 func _bot_ready() -> void:
 	bot_name = "HouseBot"
-	required_tokens = [";", "[]"]
+	required_tokens = [";"]
 	error_text = "HouseBot: missing ;  // swarm unit"
 	bot_color = Color(0.75, 0.55, 0.25)
 	_apply_visuals()

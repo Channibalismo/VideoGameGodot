@@ -1,5 +1,5 @@
 extends RogueBot
-## DemolitionBot — suicide runner. ! (or null) disarms the charge.
+## ExplodingBot — suicide runner. The Invert Patch (!) disarms the charge.
 
 @export var sprint_speed: float = 240.0
 @export var fuse_time: float = 3.5
@@ -11,8 +11,8 @@ var armed := true
 
 
 func _bot_ready() -> void:
-	bot_name = "DemolitionBot"
-	required_tokens = ["!", "null"]
+	bot_name = "ExplodingBot"
+	required_tokens = ["!"]
 	error_text = "isExploding = true  (needs !)"
 	bot_color = Color(1.0, 0.55, 0.1)
 	_apply_visuals()

@@ -1,5 +1,5 @@
 extends RogueBot
-## SignalBot — jams the Compiler HUD. String[] piercing beam kills it.
+## SignalBot — jams the Compiler HUD. Assignment Overwrite (=0) kills the jam.
 
 @export var hover_speed: float = 80.0
 @export var hover_radius: float = 90.0
@@ -10,8 +10,8 @@ var phase := 0.0
 
 func _bot_ready() -> void:
 	bot_name = "SignalBot"
-	required_tokens = ["String[]"]
-	error_text = "jammingFreq = ON  // needs String[]"
+	required_tokens = ["=0"]
+	error_text = "jammingFreq = ON  // needs =0"
 	bot_color = Color(0.85, 0.35, 0.95)
 	_apply_visuals()
 	home = global_position
@@ -28,7 +28,7 @@ func _bot_physics(delta: float) -> void:
 	if name_label and int(phase * 8.0) % 2 == 0:
 		error_label.text = "████ jamming ████"
 	else:
-		error_label.text = "jammingFreq = ON  // needs String[]"
+		error_label.text = "jammingFreq = ON  // needs =0"
 
 
 func _neutralize(success_text: String = "BUILD SUCCESSFUL") -> void:

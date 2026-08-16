@@ -24,20 +24,24 @@ texture = ExtResource("2_qoq3e")
 expand_mode = 1
 
 [node name="Title" type="Label" parent="." unique_id=324102268]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
 offset_top = 60.0
-offset_right = 1152.0
 offset_bottom = 110.0
+grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_l0nyk")
 theme_override_font_sizes/font_size = 64
 text = "SELECT MODE"
 horizontal_alignment = 1
 
 [node name="Sub" type="Label" parent="." unique_id=1204640667]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
 offset_top = 134.0
-offset_right = 1152.0
 offset_bottom = 164.0
+grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_l0nyk")
 theme_override_font_sizes/font_size = 24
 text = "Push through the ruins. Overwrite the corruption."
@@ -46,14 +50,16 @@ horizontal_alignment = 1
 [node name="Menu" type="VBoxContainer" parent="." unique_id=1921810778]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.497
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 0.497
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -149.544
-offset_top = -62.0
-offset_right = 175.456
-offset_bottom = 192.0
+offset_left = -162.5
+offset_top = -127.0
+offset_right = 162.5
+offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="SelectSaveButton" type="Button" parent="Menu" unique_id=486532111]
 layout_mode = 2
