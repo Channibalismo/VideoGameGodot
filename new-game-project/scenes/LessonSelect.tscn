@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b6i10aua55aje"]
 
 [ext_resource type="Texture2D" uid="uid://cx7sjffkwdmmh" path="res://Lessons/01-intro/01-intro_page-0002.jpg" id="1_2u8ur"]
+[ext_resource type="Script" uid="uid://v0pcinq6qov5" path="res://scripts/lesson1_slides.gd" id="1_jnrhb"]
 [ext_resource type="Texture2D" uid="uid://bhawgt7kk2npx" path="res://Lessons/01-intro/01-intro_page-0003.jpg" id="2_1xpr7"]
 [ext_resource type="Texture2D" uid="uid://dkx1x02ape404" path="res://Lessons/01-intro/01-intro_page-0004.jpg" id="3_jnrhb"]
 
@@ -17,6 +18,7 @@ offset_right = 5.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jnrhb")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=756289698]
 layout_mode = 0
@@ -168,3 +170,11 @@ layout_mode = 2
 
 [node name="TextureRect45" type="TextureRect" parent="ScrollContainer/VBoxContainer" unique_id=1876495454]
 layout_mode = 2
+
+[node name="BackButton" type="Button" parent="." unique_id=1148852199]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 28.0
+offset_bottom = 28.0
+text = "← Back to Lesson"
