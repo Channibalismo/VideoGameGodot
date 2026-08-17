@@ -6,7 +6,6 @@
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_576xt")
-lesson_number = 1
 
 [node name="Layout" type="VBoxContainer" parent="." unique_id=1025418412]
 layout_mode = 0
