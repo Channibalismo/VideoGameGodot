@@ -9,7 +9,7 @@ signal lesson_completed(lesson_number: int)
 signal xp_changed(new_xp: int)
 signal coins_changed(new_coins: int)
 
-const TOTAL_LESSONS := 13
+const TOTAL_LESSONS := 14
 const NUM_SAVE_SLOTS := 3
 
 var current_slot: int = 0

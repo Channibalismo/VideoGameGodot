@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://b36yopiq4bgpn"]
 
-[ext_resource type="Script" uid="uid://degdh0rms41f0" path="res://scripts/lesson1.gd" id="1_576xt"]
+[ext_resource type="Script" uid="uid://dyikrbrpdo8mq" path="res://scripts/lesson_template.gd" id="1_576xt"]
 
 [node name="Lesson" type="Control" unique_id=778109795]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_576xt")
+lesson_number = 1
 
 [node name="Layout" type="VBoxContainer" parent="." unique_id=1025418412]
 layout_mode = 0
@@ -16,13 +17,13 @@ theme_override_constants/separation = 24
 [node name="TitleLabel" type="Label" parent="Layout" unique_id=1748965154]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Lesson 1: Hello, Java!"
+text = "Lesson 1: Introduction to Computer Programming"
 horizontal_alignment = 1
 
 [node name="ContentLabel" type="RichTextLabel" parent="Layout" unique_id=2015537604]
 layout_mode = 2
 size_flags_vertical = 3
-text = "In this lesson you'll write your first Java program and learn how System.out.println() works."
+text = "Programming means giving a computer step-by-step instructions, called an algorithm, to solve a problem. Every language — including Java — is just a different way of writing those instructions."
 fit_content = true
 
 [node name="ButtonRow" type="HBoxContainer" parent="Layout" unique_id=1628799792]
@@ -33,10 +34,6 @@ alignment = 1
 [node name="BackButton" type="Button" parent="Layout/ButtonRow" unique_id=1327455709]
 layout_mode = 2
 text = "← Back to Map"
-
-[node name="SlidesButton" type="Button" parent="Layout/ButtonRow" unique_id=2009592982]
-layout_mode = 2
-text = "View Slides →"
 
 [node name="CompleteButton" type="Button" parent="Layout/ButtonRow" unique_id=1366021850]
 layout_mode = 2

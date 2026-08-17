@@ -3,10 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://cx7sjffkwdmmh" path="res://Lessons/01-intro/01-intro_page-0002.jpg" id="1_2u8ur"]
 [ext_resource type="Script" uid="uid://v0pcinq6qov5" path="res://scripts/lesson1_slides.gd" id="1_jnrhb"]
 [ext_resource type="Texture2D" uid="uid://bhawgt7kk2npx" path="res://Lessons/01-intro/01-intro_page-0003.jpg" id="2_1xpr7"]
+[ext_resource type="Texture2D" uid="uid://cdxbew6vqdlra" path="res://Lessons/01-intro/01-intro_page-0001.jpg" id="2_p8lul"]
 [ext_resource type="Texture2D" uid="uid://dkx1x02ape404" path="res://Lessons/01-intro/01-intro_page-0004.jpg" id="3_jnrhb"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2u8ur"]
-load_path = "res://.godot/imported/01-intro_page-0001.jpg-5b15977280b1cfef1ba375c6ecfe5b7b.ctex"
 
 [node name="Lesson-1" type="Control" unique_id=544545709]
 layout_mode = 3
@@ -33,7 +31,7 @@ size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer" unique_id=1014219547]
 layout_mode = 2
-texture = SubResource("CompressedTexture2D_2u8ur")
+texture = ExtResource("2_p8lul")
 stretch_mode = 6
 
 [node name="TextureRect2" type="TextureRect" parent="ScrollContainer/VBoxContainer" unique_id=1785002343]
@@ -119,6 +117,7 @@ layout_mode = 2
 
 [node name="TextureRect28" type="TextureRect" parent="ScrollContainer/VBoxContainer" unique_id=1026516804]
 layout_mode = 2
+texture = ExtResource("2_p8lul")
 
 [node name="TextureRect29" type="TextureRect" parent="ScrollContainer/VBoxContainer" unique_id=641530194]
 layout_mode = 2
@@ -152,6 +151,7 @@ layout_mode = 2
 
 [node name="TextureRect39" type="TextureRect" parent="ScrollContainer/VBoxContainer" unique_id=424389023]
 layout_mode = 2
+texture = ExtResource("2_p8lul")
 
 [node name="TextureRect40" type="TextureRect" parent="ScrollContainer/VBoxContainer" unique_id=462063354]
 layout_mode = 2
