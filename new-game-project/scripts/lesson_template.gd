@@ -16,8 +16,8 @@ func _ready() -> void:
 		complete_button.disabled = true
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/WorldMap.tscn")
+	get_tree().change_scene_to_file("res://scenes/LessonsMenu.tscn")
 
 func _on_complete_pressed() -> void:
 	GameState.complete_lesson(lesson_number)
-	get_tree().change_scene_to_file("res://scenes/WorldMap.tscn")
+	get_tree().change_scene_to_file("res://scenes/LessonsMenu.tscn")

@@ -17,13 +17,13 @@ theme_override_constants/separation = 24
 [node name="TitleLabel" type="Label" parent="Layout" unique_id=1748965101]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Lesson 11: Strings"
+text = "Lesson 11: Arrays"
 horizontal_alignment = 1
 
 [node name="ContentLabel" type="RichTextLabel" parent="Layout" unique_id=2015537101]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Strings are objects with built-in methods: name.length() gives the character count, name.substring(0, 3) grabs part of it, and + joins two strings together."
+text = "An array holds a fixed-size collection of values of the same type: int[] nums = {1, 2, 3}; — access an element with nums[0], and get the count with nums.length."
 fit_content = true
 
 [node name="ButtonRow" type="HBoxContainer" parent="Layout" unique_id=1628799101]

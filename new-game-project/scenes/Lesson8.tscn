@@ -17,13 +17,13 @@ theme_override_constants/separation = 24
 [node name="TitleLabel" type="Label" parent="Layout" unique_id=1748965161]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Lesson 8: Inheritance"
+text = "Lesson 8: Switch Statements"
 horizontal_alignment = 1
 
 [node name="ContentLabel" type="RichTextLabel" parent="Layout" unique_id=2015537611]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Share behavior between classes using extends and method overriding."
+text = "A switch statement compares one variable against several possible case values, running the matching block and breaking out with break — cleaner than a long if/else chain."
 fit_content = true
 
 [node name="ButtonRow" type="HBoxContainer" parent="Layout" unique_id=1628799799]

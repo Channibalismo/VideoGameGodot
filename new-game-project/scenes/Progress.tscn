@@ -22,9 +22,10 @@ expand_mode = 1
 
 [node name="Title" type="Label" parent="." unique_id=1991158111]
 layout_mode = 0
-offset_top = 40.0
-offset_right = 1152.0
-offset_bottom = 90.0
+offset_left = 388.0
+offset_top = 46.0
+offset_right = 1540.0
+offset_bottom = 103.0
 theme_override_fonts/font = ExtResource("3_eo6f8")
 theme_override_font_sizes/font_size = 64
 text = "PROGRESS"

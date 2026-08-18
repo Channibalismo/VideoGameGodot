@@ -17,13 +17,13 @@ theme_override_constants/separation = 24
 [node name="TitleLabel" type="Label" parent="Layout" unique_id=1748965160]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Lesson 7: Classes & Objects"
+text = "Lesson 7: If Statements"
 horizontal_alignment = 1
 
 [node name="ContentLabel" type="RichTextLabel" parent="Layout" unique_id=2015537610]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Model real-world things using classes, objects, and constructors."
+text = "Control the flow of your program using if, else if, and else statements."
 fit_content = true
 
 [node name="ButtonRow" type="HBoxContainer" parent="Layout" unique_id=1628799798]
