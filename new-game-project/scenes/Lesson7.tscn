@@ -1,40 +1,40 @@
-[gd_scene format=3 uid="uid://cxu1234lesson7"]
+[gd_scene format=3 uid="uid://cyn2jtgls5j8n"]
 
 [ext_resource type="Script" uid="uid://dyikrbrpdo8mq" path="res://scripts/lesson_template.gd" id="1_576xt"]
 
-[node name="Lesson" type="Control" unique_id=778109801]
+[node name="Lesson" type="Control" unique_id=778109802]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_576xt")
-lesson_number = 7
+lesson_number = 8
 
-[node name="Layout" type="VBoxContainer" parent="." unique_id=1025418418]
+[node name="Layout" type="VBoxContainer" parent="." unique_id=1025418419]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme_override_constants/separation = 24
 
-[node name="TitleLabel" type="Label" parent="Layout" unique_id=1748965160]
+[node name="TitleLabel" type="Label" parent="Layout" unique_id=1748965161]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Lesson 7: If Statements"
+text = "Lesson 7: Switch Statements"
 horizontal_alignment = 1
 
-[node name="ContentLabel" type="RichTextLabel" parent="Layout" unique_id=2015537610]
+[node name="ContentLabel" type="RichTextLabel" parent="Layout" unique_id=2015537611]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Control the flow of your program using if, else if, and else statements."
+text = "A switch statement compares one variable against several possible case values, running the matching block and breaking out with break — cleaner than a long if/else chain."
 fit_content = true
 
-[node name="ButtonRow" type="HBoxContainer" parent="Layout" unique_id=1628799798]
+[node name="ButtonRow" type="HBoxContainer" parent="Layout" unique_id=1628799799]
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="BackButton" type="Button" parent="Layout/ButtonRow" unique_id=1327455715]
+[node name="BackButton" type="Button" parent="Layout/ButtonRow" unique_id=1327455716]
 layout_mode = 2
 text = "← Back to Map"
 
-[node name="CompleteButton" type="Button" parent="Layout/ButtonRow" unique_id=1366021856]
+[node name="CompleteButton" type="Button" parent="Layout/ButtonRow" unique_id=1366021857]
 layout_mode = 2
 text = "Complete Lesson ✔"

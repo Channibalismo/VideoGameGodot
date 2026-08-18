@@ -1,40 +1,40 @@
-[gd_scene format=3 uid="uid://cxu1234lesson9"]
+[gd_scene format=3 uid="uid://dl10arr4y0001"]
 
 [ext_resource type="Script" uid="uid://dyikrbrpdo8mq" path="res://scripts/lesson_template.gd" id="1_576xt"]
 
-[node name="Lesson" type="Control" unique_id=778109803]
+[node name="Lesson" type="Control" unique_id=778110001]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_576xt")
-lesson_number = 9
+lesson_number = 10
 
-[node name="Layout" type="VBoxContainer" parent="." unique_id=1025418420]
+[node name="Layout" type="VBoxContainer" parent="." unique_id=1025418001]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme_override_constants/separation = 24
 
-[node name="TitleLabel" type="Label" parent="Layout" unique_id=1748965162]
+[node name="TitleLabel" type="Label" parent="Layout" unique_id=1748965001]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Lesson 9: Loops"
+text = "Lesson 9: Methods"
 horizontal_alignment = 1
 
-[node name="ContentLabel" type="RichTextLabel" parent="Layout" unique_id=2015537612]
+[node name="ContentLabel" type="RichTextLabel" parent="Layout" unique_id=2015537001]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Repeat actions using for loops and while loops."
+text = "Break your code into reusable methods with parameters and return values."
 fit_content = true
 
-[node name="ButtonRow" type="HBoxContainer" parent="Layout" unique_id=1628799800]
+[node name="ButtonRow" type="HBoxContainer" parent="Layout" unique_id=1628799001]
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="BackButton" type="Button" parent="Layout/ButtonRow" unique_id=1327455717]
+[node name="BackButton" type="Button" parent="Layout/ButtonRow" unique_id=1327455001]
 layout_mode = 2
 text = "← Back to Map"
 
-[node name="CompleteButton" type="Button" parent="Layout/ButtonRow" unique_id=1366021858]
+[node name="CompleteButton" type="Button" parent="Layout/ButtonRow" unique_id=1366021001]
 layout_mode = 2
 text = "Complete Lesson ✔"

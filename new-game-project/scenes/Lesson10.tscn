@@ -1,40 +1,40 @@
-[gd_scene format=3 uid="uid://dl10arr4y0001"]
+[gd_scene format=3 uid="uid://dl11str4y0001"]
 
-[ext_resource type="Script" uid="uid://dyikrbrpdo8mq" path="res://scripts/lesson_template.gd" id="1_576xt"]
+[ext_resource type="Script" uid="uid://dyikrbrpdo8mq" path="res://scripts/lesson_template.gd" id="1_yjgbg"]
 
-[node name="Lesson" type="Control" unique_id=778110001]
+[node name="Lesson" type="Control" unique_id=778111001]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_576xt")
-lesson_number = 10
+script = ExtResource("1_yjgbg")
+lesson_number = 11
 
-[node name="Layout" type="VBoxContainer" parent="." unique_id=1025418001]
+[node name="Layout" type="VBoxContainer" parent="." unique_id=1025418101]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme_override_constants/separation = 24
 
-[node name="TitleLabel" type="Label" parent="Layout" unique_id=1748965001]
+[node name="TitleLabel" type="Label" parent="Layout" unique_id=1748965101]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Lesson 10: Methods"
+text = "Lesson 10: Arrays"
 horizontal_alignment = 1
 
-[node name="ContentLabel" type="RichTextLabel" parent="Layout" unique_id=2015537001]
+[node name="ContentLabel" type="RichTextLabel" parent="Layout" unique_id=2015537101]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Break your code into reusable methods with parameters and return values."
+text = "An array holds a fixed-size collection of values of the same type: int[] nums = {1, 2, 3}; — access an element with nums[0], and get the count with nums.length."
 fit_content = true
 
-[node name="ButtonRow" type="HBoxContainer" parent="Layout" unique_id=1628799001]
+[node name="ButtonRow" type="HBoxContainer" parent="Layout" unique_id=1628799101]
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="BackButton" type="Button" parent="Layout/ButtonRow" unique_id=1327455001]
+[node name="BackButton" type="Button" parent="Layout/ButtonRow" unique_id=1327455101]
 layout_mode = 2
 text = "← Back to Map"
 
-[node name="CompleteButton" type="Button" parent="Layout/ButtonRow" unique_id=1366021001]
+[node name="CompleteButton" type="Button" parent="Layout/ButtonRow" unique_id=1366021101]
 layout_mode = 2
 text = "Complete Lesson ✔"

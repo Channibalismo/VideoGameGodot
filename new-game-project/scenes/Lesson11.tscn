@@ -1,40 +1,40 @@
-[gd_scene format=3 uid="uid://dl11str4y0001"]
+[gd_scene format=3 uid="uid://dl12fil4y0001"]
 
 [ext_resource type="Script" uid="uid://dyikrbrpdo8mq" path="res://scripts/lesson_template.gd" id="1_576xt"]
 
-[node name="Lesson" type="Control" unique_id=778111001]
+[node name="Lesson" type="Control" unique_id=778112001]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_576xt")
-lesson_number = 11
+lesson_number = 12
 
-[node name="Layout" type="VBoxContainer" parent="." unique_id=1025418101]
+[node name="Layout" type="VBoxContainer" parent="." unique_id=1025418201]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme_override_constants/separation = 24
 
-[node name="TitleLabel" type="Label" parent="Layout" unique_id=1748965101]
+[node name="TitleLabel" type="Label" parent="Layout" unique_id=1748965201]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Lesson 11: Arrays"
+text = "Lesson 11: Strings"
 horizontal_alignment = 1
 
-[node name="ContentLabel" type="RichTextLabel" parent="Layout" unique_id=2015537101]
+[node name="ContentLabel" type="RichTextLabel" parent="Layout" unique_id=2015537201]
 layout_mode = 2
 size_flags_vertical = 3
-text = "An array holds a fixed-size collection of values of the same type: int[] nums = {1, 2, 3}; — access an element with nums[0], and get the count with nums.length."
+text = "Strings are objects with built-in methods: name.length() gives the character count, name.substring(0, 3) grabs part of it, and + joins two strings together."
 fit_content = true
 
-[node name="ButtonRow" type="HBoxContainer" parent="Layout" unique_id=1628799101]
+[node name="ButtonRow" type="HBoxContainer" parent="Layout" unique_id=1628799201]
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="BackButton" type="Button" parent="Layout/ButtonRow" unique_id=1327455101]
+[node name="BackButton" type="Button" parent="Layout/ButtonRow" unique_id=1327455201]
 layout_mode = 2
 text = "← Back to Map"
 
-[node name="CompleteButton" type="Button" parent="Layout/ButtonRow" unique_id=1366021101]
+[node name="CompleteButton" type="Button" parent="Layout/ButtonRow" unique_id=1366021201]
 layout_mode = 2
 text = "Complete Lesson ✔"
