@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cdxbew6vqdlra" path="res://Lessons/01-intro/01-intro_page-0001.jpg" id="2_p8lul"]
 [ext_resource type="Texture2D" uid="uid://dkx1x02ape404" path="res://Lessons/01-intro/01-intro_page-0004.jpg" id="3_jnrhb"]
 
-[node name="Lesson-1" type="Control" unique_id=544545709]
+[node name="LessonSelect" type="Control" unique_id=544545709]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
