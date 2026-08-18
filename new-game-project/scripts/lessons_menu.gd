@@ -5,7 +5,6 @@ extends Control
 
 const LESSON_NAMES := [
 	"Introduction to Computer Programming",
-	"Introduction to Java Programming",
 	"Data Types and Variables",
 	"Output / print and println",
 	"Arithmetic Operators",
@@ -21,7 +20,6 @@ const LESSON_NAMES := [
 ]
 
 const LESSON_THUMBNAILS := [
-	"res://Lessons/01-intro/01-intro_page-0001.jpg",
 	"res://Lessons/01-intro/01-intro_page-0001.jpg",
 	"res://Lessons/02-datatype/02-datatype_page-0001.jpg",
 	"res://Lessons/03-output/03-output_page-0001.jpg",

@@ -1,16 +1,20 @@
 [gd_scene format=3 uid="uid://d1ynyee3307t4"]
 
 [ext_resource type="Script" uid="uid://cte3j81i1u4va" path="res://scripts/bot_codex.gd" id="1_8uqvx"]
+[ext_resource type="FontFile" uid="uid://cc3qys61w5p4m" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="2_qpk1w"]
 
 [node name="BotCodex" type="Control" unique_id=489589244]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_8uqvx")
 
 [node name="Dim" type="ColorRect" parent="." unique_id=1997900072]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0, 0, 0, 0.7)
@@ -32,6 +36,7 @@ offset_left = 20.0
 offset_top = 14.0
 offset_right = 600.0
 offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("2_qpk1w")
 text = "[ BOT DATABASE — OVERRIDE CODES ]"
 
 [node name="Scroll" type="ScrollContainer" parent="Panel" unique_id=1133354621]

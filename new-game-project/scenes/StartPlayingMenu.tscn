@@ -81,6 +81,8 @@ text = "Sector 01 (Combat Test)"
 
 [node name="DictionaryButton" type="Button" parent="Menu" unique_id=1010915394]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_l0nyk")
+theme_override_font_sizes/font_size = 24
 text = "Bot Codex"
 
 [node name="BackButton" type="Button" parent="Menu" unique_id=1058530114]

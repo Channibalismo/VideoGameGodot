@@ -9,6 +9,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_jm3nx")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=877566986]
@@ -50,4 +52,5 @@ offset_left = 20.0
 offset_top = -55.0
 offset_right = 100.0
 offset_bottom = -20.0
+theme_override_fonts/font = ExtResource("3_lqq4j")
 text = "← Back"

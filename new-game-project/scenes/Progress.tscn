@@ -156,21 +156,29 @@ text = "🔒 Lesson 9"
 [node name="L10" type="Label" parent="LessonGrid" unique_id=706611965]
 custom_minimum_size = Vector2(160, 32)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_eo6f8")
+theme_override_font_sizes/font_size = 24
 text = "🔒 Lesson 10"
 
 [node name="L11" type="Label" parent="LessonGrid" unique_id=1450097728]
 custom_minimum_size = Vector2(160, 32)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_eo6f8")
+theme_override_font_sizes/font_size = 24
 text = "🔒 Lesson 11"
 
 [node name="L12" type="Label" parent="LessonGrid" unique_id=35099131]
 custom_minimum_size = Vector2(160, 32)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_eo6f8")
+theme_override_font_sizes/font_size = 24
 text = "🔒 Lesson 12"
 
 [node name="L13" type="Label" parent="LessonGrid" unique_id=602900580]
 custom_minimum_size = Vector2(160, 32)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_eo6f8")
+theme_override_font_sizes/font_size = 24
 text = "🔒 Lesson 13"
 
 [node name="BackButton" type="Button" parent="." unique_id=1601465428]
