@@ -52,7 +52,7 @@ func _on_slot_pressed(i: int) -> void:
 		GameState.save_game()
 	else:
 		GameState.load_game()
-	get_tree().change_scene_to_file("res://scenes/WorldMap.tscn")
+	get_tree().change_scene_to_file("res://scenes/LessonsMenu.tscn")
 
 
 func _on_reset_pressed(i: int) -> void:
