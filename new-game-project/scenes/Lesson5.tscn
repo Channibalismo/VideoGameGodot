@@ -17,13 +17,13 @@ theme_override_constants/separation = 24
 [node name="TitleLabel" type="Label" parent="Layout" unique_id=1748965158]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Lesson 5: Arrays"
+text = "Lesson 5: Arithmetic Operators"
 horizontal_alignment = 1
 
 [node name="ContentLabel" type="RichTextLabel" parent="Layout" unique_id=2015537608]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Store and access collections of values using arrays."
+text = "Java's arithmetic operators — + - * / and % — let you add, subtract, multiply, divide, and find a remainder. Watch out: dividing two ints truncates the decimal."
 fit_content = true
 
 [node name="ButtonRow" type="HBoxContainer" parent="Layout" unique_id=1628799796]

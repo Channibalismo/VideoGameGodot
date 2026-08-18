@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cxjpegqf4ge1k"]
+
+[ext_resource type="Script" uid="uid://c8ev7sw7p28a1" path="res://scripts/lessons_menu.gd" id="1_jm3nx"]
+[ext_resource type="Texture2D" uid="uid://cllbpy4bc2qe8" path="res://assets/backgrounds/cartoon-style-wood-texture_1110-882.png" id="2_0ekky"]
+[ext_resource type="FontFile" uid="uid://cc3qys61w5p4m" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="3_lqq4j"]
+
+[node name="LessonsMenu" type="Control" unique_id=1846680134]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_jm3nx")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=877566986]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("2_0ekky")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="." unique_id=1135564136]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 30.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("3_lqq4j")
+theme_override_font_sizes/font_size = 40
+text = "LESSONS"
+horizontal_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="." unique_id=1615323986]
+layout_mode = 0
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 1.0
+offset_top = 100.0
+offset_bottom = -70.0
+
+[node name="Grid" type="GridContainer" parent="Scroll" unique_id=812157460]
+layout_mode = 2
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 18
+columns = 4
+
+[node name="BackButton" type="Button" parent="." unique_id=1844053381]
+layout_mode = 0
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -55.0
+offset_right = 100.0
+offset_bottom = -20.0
+text = "← Back"

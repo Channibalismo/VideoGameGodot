@@ -20,7 +20,7 @@ func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/StartPlayingMenu.tscn")
 
 func _on_lessons_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/WorldMap.tscn")
+	get_tree().change_scene_to_file("res://scenes/LessonsMenu.tscn")
 
 func _on_progress_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/Progress.tscn")

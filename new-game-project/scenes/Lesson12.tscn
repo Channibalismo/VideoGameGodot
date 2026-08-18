@@ -17,13 +17,13 @@ theme_override_constants/separation = 24
 [node name="TitleLabel" type="Label" parent="Layout" unique_id=1748965201]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Lesson 12: Working with Files"
+text = "Lesson 12: Strings"
 horizontal_alignment = 1
 
 [node name="ContentLabel" type="RichTextLabel" parent="Layout" unique_id=2015537201]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Java reads files with a Scanner wrapped around a File object, and writes with a FileWriter — always close what you open when you're done."
+text = "Strings are objects with built-in methods: name.length() gives the character count, name.substring(0, 3) grabs part of it, and + joins two strings together."
 fit_content = true
 
 [node name="ButtonRow" type="HBoxContainer" parent="Layout" unique_id=1628799201]
