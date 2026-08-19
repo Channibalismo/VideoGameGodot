@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cednxk4i0kgjh"]
 
-[ext_resource type="Script" uid="uid://dyikrbrpdo8mq" path="res://scripts/lesson_template.gd" id="1_576xt"]
+[ext_resource type="Script" uid="uid://coh4jv1p5ay77" path="res://scripts/lesson_slides.gd" id="1_576xt"]
 
 [node name="Lesson" type="Control" unique_id=535741630]
 layout_mode = 3
@@ -10,25 +10,31 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_576xt")
-lesson_number = 14
+lesson_number = 13
 
 [node name="Layout" type="VBoxContainer" parent="." unique_id=1029309141]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_constants/separation = 24
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
 
 [node name="TitleLabel" type="Label" parent="Layout" unique_id=663556136]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Lesson 13: GUI"
+theme_override_font_sizes/font_size = 28
+text = "Lesson"
 horizontal_alignment = 1
 
-[node name="ContentLabel" type="RichTextLabel" parent="Layout" unique_id=1950107081]
+[node name="Scroll" type="ScrollContainer" parent="Layout" unique_id=1950107081]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Java GUIs are built from components like JButton and JLabel placed on a JFrame — you respond to clicks with an ActionListener."
-fit_content = true
+
+[node name="Pages" type="VBoxContainer" parent="Layout/Scroll" unique_id=1950107082]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
 
 [node name="ButtonRow" type="HBoxContainer" parent="Layout" unique_id=352476370]
 layout_mode = 2
@@ -37,8 +43,16 @@ alignment = 1
 
 [node name="BackButton" type="Button" parent="Layout/ButtonRow" unique_id=1009674390]
 layout_mode = 2
-text = "← Back to Map"
+text = "← Back to Lessons"
 
 [node name="CompleteButton" type="Button" parent="Layout/ButtonRow" unique_id=731731262]
 layout_mode = 2
 text = "Complete Lesson ✔"
+
+[node name="TopBack" type="Button" parent="." unique_id=1376813398]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 96.0
+offset_bottom = 48.0
+text = "← Back"

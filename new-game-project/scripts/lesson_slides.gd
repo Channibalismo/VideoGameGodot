@@ -1,17 +1,16 @@
 extends Control
 ## Generic full-lesson slide viewer. Dynamically loads every page image
-## from this lesson's res://Lessons/ subfolder \u2014 handles decks from 9
+## from this lesson's res://Lessons/ subfolder — handles decks from 9
 ## pages (Arithmetic) to 90 pages (Loops) without hardcoding nodes.
 
 const LESSON_FOLDERS := [
-	"01-intro", "01-intro", "02-datatype", "03-output", "04-arithmetic",
-	"05-logical", "06-if", "07-switch", "08-loop", "09-methods",
-	"10-array", "11-string", "12-file", "13-gui",
+	"01-intro", "02-datatype", "03-output", "04-arithmetic", "05-logical",
+	"06-if", "07-switch", "08-loop", "09-methods", "10-array",
+	"11-string", "12-file", "13-gui",
 ]
 
 const LESSON_NAMES := [
 	"Introduction to Computer Programming",
-	"Introduction to Java Programming",
 	"Data Types and Variables",
 	"Output / print and println",
 	"Arithmetic Operators",
@@ -32,15 +31,17 @@ const LESSON_NAMES := [
 @onready var pages: VBoxContainer = $Layout/Scroll/Pages
 @onready var back_button: Button = $Layout/ButtonRow/BackButton
 @onready var complete_button: Button = $Layout/ButtonRow/CompleteButton
+@onready var top_back_button: Button = $TopBack
 
 
 func _ready() -> void:
 	title_label.text = "Lesson %d: %s" % [lesson_number, LESSON_NAMES[lesson_number - 1]]
 	back_button.pressed.connect(_on_back_pressed)
+	top_back_button.pressed.connect(_on_back_pressed)
 	complete_button.pressed.connect(_on_complete_pressed)
 
 	if GameState.is_completed(lesson_number):
-		complete_button.text = "Completed \u2714"
+		complete_button.text = "Completed ✔"
 		complete_button.disabled = true
 
 	_load_pages()

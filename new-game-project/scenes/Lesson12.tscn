@@ -1,30 +1,40 @@
 [gd_scene format=3 uid="uid://dl13gui4y0001"]
 
-[ext_resource type="Script" uid="uid://dyikrbrpdo8mq" path="res://scripts/lesson_template.gd" id="1_576xt"]
+[ext_resource type="Script" uid="uid://coh4jv1p5ay77" path="res://scripts/lesson_slides.gd" id="1_576xt"]
 
 [node name="Lesson" type="Control" unique_id=778113001]
 layout_mode = 3
-anchors_preset = 0
-script = ExtResource("1_576xt")
-lesson_number = 13
-
-[node name="Layout" type="VBoxContainer" parent="." unique_id=1025418301]
-layout_mode = 0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_constants/separation = 24
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_576xt")
+lesson_number = 12
+
+[node name="Layout" type="VBoxContainer" parent="." unique_id=1025418301]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
 
 [node name="TitleLabel" type="Label" parent="Layout" unique_id=1748965301]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Lesson 12: File Manipulation"
+theme_override_font_sizes/font_size = 28
+text = "Lesson"
 horizontal_alignment = 1
 
-[node name="ContentLabel" type="RichTextLabel" parent="Layout" unique_id=2015537301]
+[node name="Scroll" type="ScrollContainer" parent="Layout" unique_id=2015537301]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Java reads files with a Scanner wrapped around a File object, and writes with a FileWriter — always close what you open when you're done."
-fit_content = true
+
+[node name="Pages" type="VBoxContainer" parent="Layout/Scroll" unique_id=2015537302]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
 
 [node name="ButtonRow" type="HBoxContainer" parent="Layout" unique_id=1628799301]
 layout_mode = 2
@@ -33,8 +43,16 @@ alignment = 1
 
 [node name="BackButton" type="Button" parent="Layout/ButtonRow" unique_id=1327455301]
 layout_mode = 2
-text = "← Back to Map"
+text = "← Back to Lessons"
 
 [node name="CompleteButton" type="Button" parent="Layout/ButtonRow" unique_id=1366021301]
 layout_mode = 2
 text = "Complete Lesson ✔"
+
+[node name="TopBack" type="Button" parent="." unique_id=1606983497]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 96.0
+offset_bottom = 48.0
+text = "← Back"
