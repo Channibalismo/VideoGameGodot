@@ -1,7 +1,7 @@
 extends Control
-## Lessons menu \u2014 grid of 14 lesson buttons, each with a thumbnail pulled
-## from its corresponding res://Lessons/ subfolder. Replaces the old
-## WorldMap.tscn as the primary lesson-select hub.
+## Lessons menu — grid of 13 lesson buttons, each with a thumbnail pulled
+## from its corresponding res://Lessons/ subfolder. All lessons are always
+## unlocked here (unlike WorldMap, which still gates progress).
 
 const LESSON_NAMES := [
 	"Introduction to Computer Programming",
@@ -58,7 +58,7 @@ func _populate() -> void:
 		thumb.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		thumb.stretch_mode = TextureRect.STRETCH_SCALE
 
-		var unlocked := GameState.is_unlocked(lesson_number)
+		var unlocked := true
 		var completed := GameState.is_completed(lesson_number)
 		if not unlocked:
 			thumb.modulate = Color(0.4, 0.4, 0.4)

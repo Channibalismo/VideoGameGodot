@@ -9,11 +9,12 @@ signal lesson_completed(lesson_number: int)
 signal xp_changed(new_xp: int)
 signal coins_changed(new_coins: int)
 
-const TOTAL_LESSONS := 14
+const TOTAL_LESSONS := 13
 const NUM_SAVE_SLOTS := 3
 
 var current_slot: int = 0
 var completed_lessons: Array[int] = []
+var completed_challenges: Array[int] = []
 var xp: int = 0
 var coins: int = 0
 
@@ -54,6 +55,16 @@ func is_unlocked(lesson_number: int) -> bool:
 
 func is_completed(lesson_number: int) -> bool:
 	return completed_lessons.has(lesson_number)
+
+func is_challenge_completed(challenge_number: int) -> bool:
+	return completed_challenges.has(challenge_number)
+
+func complete_challenge(challenge_number: int, xp_reward: int = 15, coin_reward: int = 5) -> void:
+	if not completed_challenges.has(challenge_number):
+		completed_challenges.append(challenge_number)
+		add_xp(xp_reward)
+		add_coins(coin_reward)
+		save_game()
 
 ## The next lesson the player should play (first incomplete unlocked lesson).
 func get_current_lesson() -> int:
