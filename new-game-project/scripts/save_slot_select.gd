@@ -1,7 +1,4 @@
 extends Control
-## Save slot picker: three slots, each showing its own progress (or
-## "empty" if unused). Click a slot to play it — starts fresh if empty,
-## continues if occupied. Each occupied slot also has its own reset button.
 
 const NUM_SLOTS := GameState.NUM_SAVE_SLOTS
 

@@ -1,7 +1,4 @@
 extends Control
-## Lessons menu — grid of 13 lesson buttons, each with a thumbnail pulled
-## from its corresponding res://Lessons/ subfolder. All lessons are always
-## unlocked here (unlike WorldMap, which still gates progress).
 
 const LESSON_NAMES := [
 	"Introduction to Computer Programming",

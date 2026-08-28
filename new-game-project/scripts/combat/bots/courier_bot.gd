@@ -1,5 +1,4 @@
 extends RogueBot
-## CourierBot — alarm scout. Assignment Overwrite (=0) silences the timer.
 
 signal alarm_triggered
 

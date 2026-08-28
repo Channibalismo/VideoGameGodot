@@ -1,8 +1,5 @@
 extends CharacterBody2D
 class_name RogueBot
-## Base class for A.U.R.O.R.A.-corrupted rogue bots.
-## Subclasses implement behavior; this handles neutralize, contact kill,
-## labels, and shared player/combat helpers.
 
 signal neutralized_changed(is_neutralized: bool)
 
@@ -44,16 +41,9 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		return
 	if practice_mode:
-		# Stationary training-range display: no movement, no attacks,
-		# still fully hittable with the correct override code.
 		velocity = Vector2.ZERO
 		return
 	_bot_physics(delta * CombatTime.scale)
-	# _bot_physics sets `velocity` to a constant speed (direction * speed),
-	# not scaled by delta. move_and_slide() then applies the engine's real,
-	# unscaled physics delta, so without this the windup/fire timers slow
-	# down under Sandevistan but actual movement speed doesn't. Scale the
-	# resulting velocity itself so displacement matches the slowed time.
 	velocity *= CombatTime.scale
 	move_and_slide()
 

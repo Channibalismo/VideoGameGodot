@@ -1,5 +1,4 @@
 extends RogueBot
-## CombatBot — aggressive brawler. Charge loop interrupted by break;.
 
 @export var charge_speed: float = 320.0
 @export var detect_radius: float = 480.0

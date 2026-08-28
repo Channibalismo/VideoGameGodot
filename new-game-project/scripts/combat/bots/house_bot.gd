@@ -1,5 +1,4 @@
 extends RogueBot
-## HouseBot — slow swarm unit. Weak; dies to the Semicolon Patch.
 
 @export var move_speed: float = 70.0
 @export var detect_radius: float = 420.0

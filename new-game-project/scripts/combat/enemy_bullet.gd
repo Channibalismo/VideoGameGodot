@@ -1,7 +1,4 @@
 extends Area2D
-## Enemy gunfire. Lethal on contact with the player, same one-hit rule as
-## everything else. Slows down under Sandevistan just like the enemy that
-## fired it — only the player is exempt from the world slowing down.
 
 @export var speed: float = 480.0
 @export var lifetime: float = 2.5

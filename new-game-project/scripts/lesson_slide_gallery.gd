@@ -1,7 +1,4 @@
 extends VBoxContainer
-## Dynamically loads every image in a folder as a TextureRect at runtime.
-## Avoids hand-placing potentially dozens of nodes per lesson — just point
-## `folder_path` at a res://Lessons/... directory and it builds itself.
 
 @export var folder_path: String = ""
 @export var slide_width: float = 640.0
@@ -36,7 +33,7 @@ func _ready() -> void:
 		_show_status("No slide images found in this lesson's folder.")
 		return
 
-	filenames.sort()  # filenames are zero-padded page numbers, so lexical sort = page order
+	filenames.sort() 
 
 	for filename in filenames:
 		var tex: Texture2D = load(folder_path.path_join(filename))

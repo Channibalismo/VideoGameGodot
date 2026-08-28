@@ -1,7 +1,4 @@
 extends Control
-## Lesson selection screen: pick any unlocked lesson from the current save
-## slot and jump straight into it. Uses live GameState (not peek) since
-## this operates on whatever slot is actually active right now.
 
 const NUM_LESSONS := GameState.TOTAL_LESSONS
 

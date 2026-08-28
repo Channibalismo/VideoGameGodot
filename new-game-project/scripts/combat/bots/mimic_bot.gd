@@ -1,5 +1,4 @@
 extends RogueBot
-## MimicBot — fake survivor. ADS (aim at it) reveals Trap vs Survivor code.
 
 @export var lunge_speed: float = 300.0
 @export var reveal_distance: float = 110.0

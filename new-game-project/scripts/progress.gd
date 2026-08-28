@@ -1,7 +1,4 @@
 extends Control
-## Progress screen: view detailed lesson-by-lesson progress for any save
-## slot, without needing to load into it. Read-only — uses GameState.peek_slot
-## so it never disturbs whatever's actually loaded in a live session.
 
 const NUM_SLOTS := GameState.NUM_SAVE_SLOTS
 const NUM_LESSONS := GameState.TOTAL_LESSONS

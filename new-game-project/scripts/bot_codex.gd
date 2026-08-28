@@ -1,7 +1,4 @@
 extends Control
-## "BOT DATABASE" overlay — read-only reference for which override code
-## disables which rogue bot type. No pausing needed; this only ever
-## opens from a menu, never mid-combat.
 
 @onready var entry_list: VBoxContainer = $Panel/Scroll/EntryList
 @onready var close_button: Button = $Panel/CloseButton

@@ -1,9 +1,5 @@
 class_name BotCodexData
 extends RefCounted
-## Reference table for the Bot Codex popup. Mirrors the required_tokens
-## each RogueBot subclass hardcodes in its own _bot_ready() — keep this
-## in sync if a bot's accepted patch changes. Tokens come from the 7
-## core Java override patches defined in TokenData.
 
 const ENTRIES := [
 	{

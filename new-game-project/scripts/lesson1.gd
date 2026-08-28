@@ -1,5 +1,4 @@
 extends "res://scripts/lesson_template.gd"
-## Lesson 1 also links out to its real slide deck.
 
 @onready var slides_button: Button = $Layout/ButtonRow/SlidesButton
 

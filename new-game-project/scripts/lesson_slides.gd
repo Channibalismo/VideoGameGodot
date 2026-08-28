@@ -1,7 +1,4 @@
 extends Control
-## Generic full-lesson slide viewer. Dynamically loads every page image
-## from this lesson's res://Lessons/ subfolder — handles decks from 9
-## pages (Arithmetic) to 90 pages (Loops) without hardcoding nodes.
 
 const LESSON_FOLDERS := [
 	"01-intro", "02-datatype", "03-output", "04-arithmetic", "05-logical",

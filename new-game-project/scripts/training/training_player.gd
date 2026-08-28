@@ -1,14 +1,10 @@
 extends CharacterBody2D
-## Vanguard Specialist — square placeholder for the Patch-Driver operator.
-## Tuned Hotline Miami style: fast, twitchy, one hit and you're dead.
-## Mobility ability is a Cyberpunk-style Sandevistan: the world slows
-## down around you while you move at full speed.
 
 signal player_died
 
 @export var speed: float = 380.0
 @export var fire_rate: float = 0.22
-@export var bullet_scene: PackedScene  # assign TrainingBullet.tscn in the Inspector
+@export var bullet_scene: PackedScene 
 
 @export_group("Sandevistan")
 @export var sandevistan_duration: float = 2.0
@@ -21,7 +17,7 @@ signal player_died
 @export_group("Comment Shield")
 @export var shield_duration: float = 1.2
 
-var loaded_token: String = ""  # set by the room controller when the HUD loads a round
+var loaded_token: String = ""  
 var is_dead := false
 var fire_timer := 0.0
 var shake_trauma := 0.0
@@ -40,9 +36,6 @@ var shield_timer := 0.0
 
 func _ready() -> void:
 	add_to_group("player")
-	# Keep the camera upright while the body rotates toward the mouse.
-	# Without this, look/aim feeds back into world mouse coords and aim
-	# locks up whenever you move and turn at the same time.
 	if camera:
 		camera.ignore_rotation = true
 	if muzzle_flash:
@@ -77,8 +70,6 @@ func _physics_process(delta: float) -> void:
 			afterimage_timer = afterimage_interval
 			_spawn_afterimage()
 
-	# The player always moves at full speed — Sandevistan doesn't touch
-	# this, only CombatTime.scale (read by enemies) changes.
 	velocity = input_dir * speed
 	move_and_slide()
 
@@ -126,8 +117,6 @@ func _activate_sandevistan() -> void:
 	modulate = Color(0.6, 0.95, 1.0)
 	shake(0.15)
 	afterimage_timer = 0.0
-	# ignore_time_scale=true so the ability's own duration is real-world
-	# seconds, not stretched out by the slow-mo it's causing.
 	await get_tree().create_timer(sandevistan_duration, true, false, true).timeout
 	sandevistan_active = false
 	CombatTime.scale = 1.0
@@ -182,7 +171,6 @@ func _end_shield() -> void:
 
 
 func _shoot() -> void:
-	# Comment Shield doesn't fire a round — it's a defensive burst.
 	if loaded_token == "//":
 		_activate_shield()
 		return

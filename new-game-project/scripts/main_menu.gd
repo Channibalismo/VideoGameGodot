@@ -1,5 +1,4 @@
 extends Control
-## Main menu navigation.
 
 @onready var start_button: MenuButton = $Menu/StartButton
 @onready var lessons_button: MenuButton = $Menu/LessonsButton

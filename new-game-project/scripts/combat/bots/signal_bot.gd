@@ -1,5 +1,4 @@
 extends RogueBot
-## SignalBot — jams the Compiler HUD. Assignment Overwrite (=0) kills the jam.
 
 @export var hover_speed: float = 80.0
 @export var hover_radius: float = 90.0
@@ -16,7 +15,6 @@ func _bot_ready() -> void:
 	_apply_visuals()
 	home = global_position
 	add_to_group("signal_jammers")
-	# Soft collision — hovers, still lethal on touch.
 	collision_layer = 8
 
 

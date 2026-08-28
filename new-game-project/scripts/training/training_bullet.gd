@@ -1,6 +1,4 @@
 extends Area2D
-## Patch-Driver energy round. Carries whatever token was loaded via the
-## Compiler Readout HUD when it was fired.
 
 @export var speed: float = 1600.0
 @export var lifetime: float = 2.5

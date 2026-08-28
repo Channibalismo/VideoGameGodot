@@ -1,8 +1,5 @@
 class_name TokenData
 extends RefCounted
-## Shared lookup table for Patch-Driver round types — the 7 core Java
-## override patches used to cure/decommission glitched robots.
-## Everything else (HUD, targets, codex) reads from this single source.
 
 const TOKENS := {
 	";": {

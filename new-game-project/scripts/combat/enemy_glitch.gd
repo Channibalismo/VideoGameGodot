@@ -1,10 +1,4 @@
 extends CharacterBody2D
-## Tier 1 minor-glitch mob. Hotline Miami rules: one touch and the player
-## is dead. Two flavors, randomized per spawn unless overridden:
-##   KNIFE — patrols, then charges straight into contact range.
-##   GUN   — patrols, then holds a preferred range and fires at the player.
-## Both still kill instantly on contact. Neutralize with the correct
-## Patch-Driver token, or don't get caught.
 
 const EnemyBulletScene := preload("res://scenes/combat/EnemyBullet.tscn")
 

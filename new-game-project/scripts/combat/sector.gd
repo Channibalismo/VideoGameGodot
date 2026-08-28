@@ -1,7 +1,4 @@
 extends Node2D
-## Combat sector: patrol/chase glitch enemies, one touch and you're dead.
-## Clear every enemy to win. Death triggers a fast Hotline-Miami-style
-## restart of the whole room — no health bar, no mercy.
 
 @onready var player: CharacterBody2D = $TrainingPlayer
 @onready var hud: Control = $UI/CompilerHUD

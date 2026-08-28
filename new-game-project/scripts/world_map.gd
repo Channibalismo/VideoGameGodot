@@ -1,11 +1,5 @@
 extends Control
-## Root script for WorldMap.tscn — a Mario-style walkable overworld.
-## A/D walks the character between lesson nodes along the path (only onto
-## unlocked ones); Enter/Space plays whichever node you're standing on.
-## Clicking a node directly still works too (instant fast-travel, handled
-## by lesson_node.gd) and also snaps the walking marker there.
 
-## Lesson1..Lesson9, in the same left-to-right order as the drawn path.
 const PATH_ORDER := [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 const WALK_DURATION := 0.22
 const CAMERA_FOLLOW_SPEED := 6.0
@@ -113,8 +107,6 @@ func _refresh_labels() -> void:
 	coins_label.text = "🪙 Coins: %d" % GameState.coins
 
 
-## Places the player marker on the node for the next lesson to play,
-## instantly (no walk animation) — used on scene entry and after completion.
 func _snap_marker_to_current_lesson() -> void:
 	var current := GameState.get_current_lesson()
 	var index := PATH_ORDER.find(current)

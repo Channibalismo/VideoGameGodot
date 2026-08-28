@@ -1,6 +1,4 @@
 extends Control
-## Template lesson scene. Duplicate this .tscn for Lesson2..Lesson9 and
-## update `lesson_number` + the title/content text for each.
 
 @export var lesson_number: int = 1
 

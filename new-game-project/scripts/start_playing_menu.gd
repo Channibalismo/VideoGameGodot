@@ -1,5 +1,4 @@
 extends Control
-## "Start Playing" submenu: pick a save slot, or jump into a test mode.
 
 @onready var select_save_button: Button = $Menu/SelectSaveButton
 @onready var training_button: Button = $Menu/TrainingButton

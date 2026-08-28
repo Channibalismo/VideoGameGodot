@@ -1,6 +1,4 @@
 extends Area2D
-## OmniKernel terminal for CraneBot. Walk up and press E, type:
-## crane.setPower(false);
 
 @export var expected_code: String = "crane.setPower(false);"
 @export var crane_path: NodePath

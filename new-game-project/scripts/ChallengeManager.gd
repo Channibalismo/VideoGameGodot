@@ -1,7 +1,4 @@
 extends Control
-## Coding Challenges — pick a lesson topic and a difficulty, then type the
-## Java code that satisfies the objective. Grading strips all whitespace
-## before comparing, so formatting/line-break differences don't matter.
 
 @onready var lesson_option: OptionButton = $Layout/TopRow/LessonOption
 @onready var easy_button: Button = $Layout/TopRow/DifficultyRow/EasyButton

@@ -72,8 +72,8 @@ error_text = "robotHealth = 10  (needs =0)"
 
 [node name="Target4" parent="." unique_id=667922749 instance=ExtResource("3_5p1af")]
 position = Vector2(2850, 420)
-required_token = "[]"
-error_text = "ERROR: expected [] declaration"
+required_token = "(Player)"
+error_text = "TargetType target = (RogueBot) unit;  (needs (Player))"
 
 [node name="Target5" parent="." unique_id=1488447560 instance=ExtResource("3_5p1af")]
 position = Vector2(2850, 1200)
@@ -99,7 +99,7 @@ offset_left = 260.0
 offset_top = 20.0
 offset_right = 261.0
 offset_bottom = 43.0
-text = "WASD move | Mouse aim | R rack a round | Click fire | Shift = Sandevistan | Rounds: ; ! =0 [] // break;"
+text = "WASD move | Mouse aim | R rack a round | Click fire | Shift = Sandevistan | Patches: ; ! =0 break; // (Player) .setPower(false);"
 
 [node name="LoadedLabel" type="Label" parent="UI" unique_id=872178541]
 modulate = Color(1, 0.9, 0.4, 1)
@@ -150,3 +150,8 @@ practice_mode = true
 [node name="MimicBot" parent="." unique_id=1700906947 instance=ExtResource("14_f70q8")]
 position = Vector2(1100, 2100)
 practice_mode = true
+
+[node name="Target7" parent="." unique_id=145453064 instance=ExtResource("3_5p1af")]
+position = Vector2(2850, 2100)
+required_token = ".setPower(false);"
+error_text = "system.setPower(true);  // needs .setPower(false);"

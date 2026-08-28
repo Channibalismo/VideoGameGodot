@@ -1,5 +1,4 @@
 extends RogueBot
-## MedBot — backline healer. Type cast (Player) reassigns heal target.
 
 @export var move_speed: float = 95.0
 @export var heal_radius: float = 220.0

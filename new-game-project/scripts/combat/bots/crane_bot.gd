@@ -1,5 +1,4 @@
 extends RogueBot
-## CraneBot — stationary stage hazard. Disabled via OmniKernel terminal text.
 
 signal request_terminal(bot: Node)
 

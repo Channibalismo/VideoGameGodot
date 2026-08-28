@@ -1,5 +1,4 @@
 extends Control
-## Real slide viewer for Lesson 1 (scanned intro-lesson pages).
 
 @onready var back_button: Button = $BackButton
 

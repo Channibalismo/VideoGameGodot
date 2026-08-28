@@ -1,8 +1,7 @@
 extends Area2D
-## Attach to each lesson node (Lesson1..Lesson9) in WorldMap.tscn.
 
 @export var lesson_number: int = 1
-@export var lesson_scene: String = "" ## e.g. "res://scenes/Lesson1.tscn". Falls back to a guessed path if empty.
+@export var lesson_scene: String = "" 
 
 @onready var label: Label = $Label
 

@@ -1,6 +1,4 @@
 extends Area2D
-## Training dummy: displays a live Java glitch above it. Correct token
-## clears it (green "BUILD SUCCESSFUL"); wrong token just bounces off.
 
 @export var required_token: String = ";"
 @export var error_text: String = "ERROR: missing ;"

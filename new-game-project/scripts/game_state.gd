@@ -1,9 +1,4 @@
 extends Node
-## Autoload singleton tracking lesson progress, XP, and coins.
-## Access anywhere as `GameState`. Supports multiple save slots — call
-## select_slot(n) (or just set current_slot) before save_game()/load_game()
-## to target a specific slot. peek_slot(n) reads a slot's data without
-## disturbing whatever's currently loaded, for slot-picker previews.
 
 signal lesson_completed(lesson_number: int)
 signal xp_changed(new_xp: int)
@@ -31,8 +26,6 @@ func slot_exists(slot: int) -> bool:
 	return FileAccess.file_exists(slot_path(slot))
 
 
-## Reads a slot's saved data straight from disk without touching the
-## currently active slot. Returns {} if that slot has no save yet.
 func peek_slot(slot: int) -> Dictionary:
 	var path := slot_path(slot)
 	if not FileAccess.file_exists(path):
@@ -47,7 +40,6 @@ func peek_slot(slot: int) -> Dictionary:
 	return parsed
 
 
-## A lesson is unlocked if it's lesson 1, or the previous lesson is completed.
 func is_unlocked(lesson_number: int) -> bool:
 	if lesson_number <= 1:
 		return true
@@ -66,7 +58,6 @@ func complete_challenge(challenge_number: int, xp_reward: int = 15, coin_reward:
 		add_coins(coin_reward)
 		save_game()
 
-## The next lesson the player should play (first incomplete unlocked lesson).
 func get_current_lesson() -> int:
 	for i in range(1, TOTAL_LESSONS + 1):
 		if not is_completed(i):
@@ -89,13 +80,11 @@ func add_coins(amount: int) -> void:
 	coins += amount
 	coins_changed.emit(coins)
 
-## Resets in-memory progress (does not touch disk until save_game() is called).
 func reset_progress() -> void:
 	completed_lessons = []
 	xp = 0
 	coins = 0
 
-## Deletes a slot's save file entirely, so it reads back as empty.
 func delete_slot(slot: int) -> void:
 	var path := slot_path(slot)
 	if FileAccess.file_exists(path):

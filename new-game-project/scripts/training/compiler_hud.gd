@@ -1,7 +1,4 @@
 extends Control
-## "RACK MAGAZINE" overlay. Pauses the game, lets the player type a token,
-## shows the real Java it maps to, and loads it into the Patch-Driver on
-## ENTER. ESC cancels without loading.
 
 signal token_loaded(token: String)
 

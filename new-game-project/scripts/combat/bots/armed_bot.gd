@@ -1,6 +1,4 @@
 extends RogueBot
-## ArmedBot — cover shooter. Needs Assignment Bullet (=0).
-## Peek-fire from near cover props in group "cover".
 
 @export var move_speed: float = 120.0
 @export var fire_cooldown: float = 0.85

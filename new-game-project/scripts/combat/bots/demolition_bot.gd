@@ -1,5 +1,4 @@
 extends RogueBot
-## ExplodingBot — suicide runner. The Invert Patch (!) disarms the charge.
 
 @export var sprint_speed: float = 240.0
 @export var fuse_time: float = 3.5
