@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://dw1y02v1rmb78"]
 
+[ext_resource type="Script" uid="uid://m2e01joaq54o" path="res://scripts/ChallengeManager.gd" id="1_rfyu6"]
+[ext_resource type="Texture2D" uid="uid://cllbpy4bc2qe8" path="res://assets/backgrounds/cartoon-style-wood-texture_1110-882.png" id="2_r4cdx"]
+[ext_resource type="FontFile" uid="uid://cc3qys61w5p4m" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="3_a46kb"]
+
 [node name="CodingChallenges" type="Control" unique_id=1361435476]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +11,115 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_rfyu6")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1158876302]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("2_r4cdx")
+expand_mode = 1
+
+[node name="Layout" type="VBoxContainer" parent="." unique_id=34472331]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 30.0
+offset_right = -40.0
+offset_bottom = -30.0
+theme_override_constants/separation = 18
+
+[node name="Title" type="Label" parent="Layout" unique_id=429179139]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a46kb")
+theme_override_font_sizes/font_size = 64
+text = "CODE CHALLENGES"
+horizontal_alignment = 1
+
+[node name="TopRow" type="HBoxContainer" parent="Layout" unique_id=1029210906]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="LessonOption" type="OptionButton" parent="Layout/TopRow" unique_id=1654654547]
+custom_minimum_size = Vector2(340, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a46kb")
+theme_override_font_sizes/font_size = 24
+
+[node name="DifficultyRow" type="HBoxContainer" parent="Layout/TopRow" unique_id=919525101]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="EasyButton" type="Button" parent="Layout/TopRow/DifficultyRow" unique_id=943707713]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a46kb")
+theme_override_font_sizes/font_size = 24
+text = "Easy"
+
+[node name="MediumButton" type="Button" parent="Layout/TopRow/DifficultyRow" unique_id=813106374]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a46kb")
+theme_override_font_sizes/font_size = 24
+text = "Medium"
+
+[node name="HardButton" type="Button" parent="Layout/TopRow/DifficultyRow" unique_id=244445768]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a46kb")
+theme_override_font_sizes/font_size = 24
+text = "Hard"
+
+[node name="ObjectivePanel" type="PanelContainer" parent="Layout" unique_id=2115817598]
+layout_mode = 2
+
+[node name="ObjectiveLabel" type="RichTextLabel" parent="Layout/ObjectivePanel" unique_id=564451757]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_a46kb")
+theme_override_fonts/bold_font = ExtResource("3_a46kb")
+theme_override_fonts/bold_italics_font = ExtResource("3_a46kb")
+theme_override_fonts/italics_font = ExtResource("3_a46kb")
+theme_override_fonts/mono_font = ExtResource("3_a46kb")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+bbcode_enabled = true
+fit_content = true
+
+[node name="CodeInput" type="TextEdit" parent="Layout" unique_id=417758270]
+custom_minimum_size = Vector2(0, 260)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_a46kb")
+theme_override_font_sizes/font_size = 34
+placeholder_text = "Type your Java code here..."
+
+[node name="FeedbackLabel" type="Label" parent="Layout" unique_id=1967173466]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="ButtonRow" type="HBoxContainer" parent="Layout" unique_id=1391012561]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="SubmitButton" type="Button" parent="Layout/ButtonRow" unique_id=553169839]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a46kb")
+theme_override_font_sizes/font_size = 24
+text = "Submit"
+
+[node name="HintButton" type="Button" parent="Layout/ButtonRow" unique_id=1280872637]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a46kb")
+theme_override_font_sizes/font_size = 24
+text = "Hint"
+
+[node name="BackButton" type="Button" parent="Layout/ButtonRow" unique_id=1110262068]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a46kb")
+theme_override_font_sizes/font_size = 24
+text = "← Back"

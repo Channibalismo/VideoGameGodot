@@ -17,6 +17,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 0.7)
 
 [node name="Panel" type="Panel" parent="." unique_id=1117396454]
@@ -37,6 +39,7 @@ offset_top = 14.0
 offset_right = 600.0
 offset_bottom = 46.0
 theme_override_fonts/font = ExtResource("2_qpk1w")
+theme_override_font_sizes/font_size = 24
 text = "[ BOT DATABASE — OVERRIDE CODES ]"
 
 [node name="Scroll" type="ScrollContainer" parent="Panel" unique_id=1133354621]
@@ -57,4 +60,6 @@ offset_left = 500.0
 offset_top = 480.0
 offset_right = 600.0
 offset_bottom = 512.0
+theme_override_fonts/font = ExtResource("2_qpk1w")
+theme_override_font_sizes/font_size = 24
 text = "Close"

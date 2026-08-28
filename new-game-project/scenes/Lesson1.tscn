@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b36yopiq4bgpn"]
 
 [ext_resource type="Script" uid="uid://coh4jv1p5ay77" path="res://scripts/lesson_slides.gd" id="1_576xt"]
+[ext_resource type="FontFile" uid="uid://cc3qys61w5p4m" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="2_ja6e1"]
 
 [node name="Lesson" type="Control" unique_id=778109795]
 layout_mode = 3
@@ -22,7 +23,8 @@ theme_override_constants/separation = 12
 
 [node name="TitleLabel" type="Label" parent="Layout" unique_id=1748965154]
 layout_mode = 2
-theme_override_font_sizes/font_size = 28
+theme_override_fonts/font = ExtResource("2_ja6e1")
+theme_override_font_sizes/font_size = 64
 text = "Lesson"
 horizontal_alignment = 1
 
@@ -42,10 +44,14 @@ alignment = 1
 
 [node name="BackButton" type="Button" parent="Layout/ButtonRow" unique_id=1327455709]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ja6e1")
+theme_override_font_sizes/font_size = 24
 text = "← Back to Lessons"
 
 [node name="CompleteButton" type="Button" parent="Layout/ButtonRow" unique_id=1366021850]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ja6e1")
+theme_override_font_sizes/font_size = 24
 text = "Complete Lesson ✔"
 
 [node name="TopBack" type="Button" parent="." unique_id=1035306732]
@@ -54,4 +60,6 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = 96.0
 offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("2_ja6e1")
+theme_override_font_sizes/font_size = 24
 text = "← Back"
